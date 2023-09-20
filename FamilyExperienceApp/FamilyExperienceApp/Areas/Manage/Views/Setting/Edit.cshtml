@@ -1,0 +1,35 @@
+﻿@model Setting
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>Setting Edit</h1>
+        </div>
+        <div class="col-md-8">
+            <form method="post" asp-action="edit">
+                <div class="form-group">
+                    <label for="Key">Key</label>
+                    <input id="key" for="Key" disabled class="form-control" value="@Model.Key">
+                    <input  type="hidden" name="Key" value="@Model.Key" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Value">Value</label>
+                    <input asp-for="Value" class="form-control">
+                    <span class="text-danger" asp-validation-for="Value"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{
+    @Html.Partial("_ValidationScriptsPartial")
+}
+

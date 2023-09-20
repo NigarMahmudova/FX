@@ -1,0 +1,514 @@
+﻿@model HomeVM
+
+@section Css{
+    <link rel="stylesheet" href="~/./assets/css/slider.css" />
+    <link rel="stylesheet" href="~/./assets/css/carousel.css" />
+}
+
+@inject LayoutService _layoutService
+@{
+    var settings = _layoutService.GetSettings();
+}
+
+<!-- Main section start -->
+    <div id="fx-page-outer">
+        <div id="fx-home-page-inner" class="fx-content-full-width">
+            <main id="fx-page-content" class="qodef-grid qodef-layout--template " role="main">
+                <div class="fx-grid-inner">
+                    <div class="qodef-grid-item qodef-page-content-section qodef-col--12 qodef-col--content">
+                        <div class="elementor elementor-179">
+                            <!-- Slider section start -->
+                            <section>
+                                <!-- START SLICK SLIDER -->
+                                <div class="slider-wrapper">
+                                    <div class="slider responsive lazy">
+                                        @foreach(var item in Model.Sliders)
+                                        {
+                                        <div class="slider-item-wrapper">
+                                            <div class="slider-item">
+                                                <img class="slick-slider-img" alt="Alt"
+                                                    src="~/manage/uploads/sliders/@item.ImageName" />
+                                                <div class="slider-header"> @item.Title </div>
+                                                <div class="slider-desc" style="color: #000; font-size: 22px; font-weight: 500; width: 30%">
+                                                    @item.Desc </div>
+                                                <div class="slider-btn">
+                                                    <a class="slider-link-btn"
+                                                        href="@item.BtnUrl"> @item.BtnText </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        }
+                                    </div>
+                                    <div class="arrows">
+                                        <button class="fx-nav-left">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="15.083" height="28.752"
+                                                viewBox="0 0 15.083 28.752">
+                                                <path d="M247.1,409.938,233.078,423.96,247.1,437.983"
+                                                    transform="translate(-232.371 -409.584)" fill="none" stroke="#000"
+                                                    stroke-width="1"></path>
+                                            </svg></button>
+                                        <button class="fx-nav-right">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="15.083" height="28.752"
+                                                viewBox="0 0 15.083 28.752">
+                                                <path d="M233.078,409.938,247.1,423.96l-14.023,14.023"
+                                                    transform="translate(-232.725 -409.584)" fill="none" stroke="#000"
+                                                    stroke-width="1"></path>
+                                            </svg></button>
+                                    </div>
+                                    <div class="slider-progress">
+                                        <div class="progress"></div>
+                                    </div>
+                                </div>
+                                <!-- END SLICK SLIDER -->
+                            </section>
+                            <!-- Slider section end -->
+
+                            <!-- Products section start -->
+                            <section>
+                                <div class="products">
+                                    <div class="container">
+                                        <div class="fx-product-list fx--hover-image">
+                                            <div class="fx-filter-holder">
+                                                <div class="fx-category-filter">
+                                                    <ul class="tabs fx-category-list">
+                                                        <li class="product-active" data-id="1"><a class="product-border fx-category-filter-link" 
+                                                                href="#">All Products</a>
+                                                        </li>
+                                                        <li data-id="2"><a class="fx-category-filter-link"
+                                                                href="#">Winter Collections</a>
+                                                        </li>
+                                                        <li data-id="3"><a class="fx-category-filter-link"
+                                                                href="#">Summer Collections</a>
+                                                        </li>
+                                                        <li data-id="4"><a class="fx-category-filter-link"
+                                                                href="#">Spring/Autumn Collections</a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+
+                                            <div class="fx-grid">
+                                                <div class="fx-Tabs-panel" id="1">
+                                                    @Html.Partial("_ProductTabContentPartial",Model.Products)
+                                                </div>
+                                                <div class="fx-Tabs-panel d-none" id="2">
+                                                    @Html.Partial("_ProductTabContentPartial",Model.WinterProducts)
+                                                </div>
+                                                <div class="fx-Tabs-panel d-none" id="3">
+                                                    @Html.Partial("_ProductTabContentPartial",Model.SummerProducts)
+                                                </div>
+                                                <div class="fx-Tabs-panel d-none" id="4">
+                                                    @Html.Partial("_ProductTabContentPartial",Model.SpringAutumnProducts)
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Products section end -->
+
+                            <!-- Gender section start -->
+                            <section>
+                                <div class="gender">
+                                    <div class="elementor-widget-container">
+                                        <div class="fx-product-category-list">
+                                            <div class="fx-grid-inner d-flex">
+                                            @foreach (var item in Model.Genders)
+                                            {
+                                                <div class="col-lg-6">
+                                                    <div class="fx-grid-item  product-category gender-first">
+                                                        <div class="fx-e-inner-gender">
+                                                            <img width="1280" height="1272"
+                                                             src="~/manage/uploads/genders/@item.ImageName"
+                                                             class="attachment-full size-full" alt="a"
+                                                             sizes="(max-width: 1280px) 100vw, 1280px" />
+                                                            <div class="category-title-holder">
+                                                                <h1 class="category-title"
+                                                                style="text-transform: uppercase">
+                                                                    @item.Title
+                                                                </h1>
+                                                                <a class="button add_to_cart_button"
+                                                               href="@item.BtnUrl">
+                                                                    @item.BtnText
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Gender section end -->
+
+                            <!-- Banner section start -->
+                            <section>
+                                <div class="container">
+                                    <div class="adds">
+                                        <div class="row">
+                                            @for (int i = 0; i < Model.Banners.Count; i++)
+                                        {
+                                            Banner bn = Model.Banners[i];
+                                            if(i % 2 == 0){
+                                                <div class="col-lg-4">
+                                                    <div class="adds-inner">
+                                                        <div class="adds-media">
+                                                            <div class="adds-media-image">
+                                                                <a href="#">
+                                                                    <img width="356" height="379"
+                                                                 src="~/manage/uploads/banners/@bn.ImageName"
+                                                                 class="attachment-full size-full" alt="a" />
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="adds-content">
+                                                            <div class="adds-top-holder">
+                                                                <div class="adds-info">
+                                                                    <div class="adds-info-category">
+                                                                        <a href="#">@bn.SubTitle1</a>
+                                                                        <span class="adds-info-separator">|</span>
+                                                                        <a href="#">@bn.SubTitle2</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="adds-text">
+                                                                <h5 class="adds-title">
+                                                                    <a class="adds-title-link" href="#">
+                                                                        @bn.Title
+                                                                    </a>
+                                                                </h5>
+                                                                <div class="adds-view-more">
+                                                                    <a class="adds-shortcode" href="@bn.BtnUrl" target="_self">
+                                                                        <span class="view-more-text">@bn.BtnText</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                            else
+                                            {
+                                                <div class="col-lg-4">
+                                                    <div class="adds-inner">
+                                                        <div class="adds-media">
+                                                            <div class="adds-media-image">
+                                                                <a href="#">
+                                                                    <img width="356" height="456"
+                                                                 src="~/manage/uploads/banners/@bn.ImageName"
+                                                                 class="attachment-full size-full" alt="a" />
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                        <div class="adds-content">
+                                                            <div class="adds-top-holder">
+                                                                <div class="adds-info">
+                                                                    <div class="adds-info-category">
+                                                                        <a href="#">@bn.SubTitle1</a>
+                                                                        <span class="adds-info-separator">|</span>
+                                                                        <a href="#">@bn.SubTitle2</a>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="adds-text">
+                                                                <h5 class="adds-title">
+                                                                    <a class="adds-title-link" href="#">
+                                                                        @bn.Title
+                                                                    </a>
+                                                                </h5>
+                                                                <div class="adds-view-more">
+                                                                    <a class="adds-shortcode" href="@bn.BtnUrl" target="_self">
+                                                                        <span class="view-more-text">@bn.BtnText</span>
+                                                                    </a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            }
+                                        }
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Banner section start -->
+
+                            <!-- Email section start -->
+                            <section>
+                                <div class="email">
+                                    <div class="fx-wrap">
+                                        <div class="elementor-container">
+                                            <div class="elementor-widget-container">
+                                                <div class="fx-section-title-email">
+                                                    <h3 class="fx-m-title">
+                                                        Sing up to our newsletter for all the latest news &amp;
+                                                        discounts. </h3>
+                                                </div>
+                                            </div>
+                                            <div class="email-element">
+                                                <div class="elementor-widget-container">
+                                                    <form action="#" method="post" class="wpcf7-form init demo">
+                                                        <div class="fx-newsletter">
+                                                            <label>
+                                                                <span class="fx-form-control" data-name="your-email">
+                                                                    <input placeholder="E-mail address" value=""
+                                                                        type="email" name="your-email" />
+                                                                </span>
+                                                            </label>
+                                                            <button class="fx-form-control fx-button" type="submit">
+                                                                <span class="fx-m-text">Send</span>
+                                                                <svg class="fx-svg--button-arrow"
+                                                                    xmlns="http://www.w3.org/2000/svg" width="35.899"
+                                                                    height="17.991" viewBox="0 0 35.899 17.991">
+                                                                    <path
+                                                                        d="M-.001 8.996H35.19M26.549.354l8.642 8.642-8.642 8.642"
+                                                                        fill="none" stroke="currentColor" />
+                                                                </svg>
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Email section end -->
+
+                            <!-- Instagram section start -->
+                            <section>
+                                <div class="instagram">
+                                    <div class="container">
+                                        <div class="fx-section-title">
+                                            <h4 class="fx-m-title">
+                                                Instagram </h4>
+                                            <p class="fx-m-text" style="margin-top: 9px">
+                                                Follow us on
+                                                <a href="#">@settings["Instagram"]</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Instagram section end -->
+
+                            <!-- Carousel section start -->
+                            <section>
+                                <div class="carousel">
+                                    <div class="carousel-slider">
+                                        @foreach (var item in Model.ImageCarousels)
+                                    {
+                                        <img src="~/manage/uploads/carousels/@item.ImageName" />
+                                        
+                                    }
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Carousel section end -->
+
+                            <!-- Features section start -->
+                            <section>
+                                <div class="features">
+                                    <div class="col-lg-3 col-12 elementor-widget-container">
+                                        <div class="features-item">
+                                            <div class="fx-m-icon-wrapper">
+                                                <span class="fx-icon-holder">
+                                                    <span class="fx-m-svg">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="6.5">
+                                                            <g data-name="Group 425">
+                                                                <path data-name="Path 634"
+                                                                    d="M23.809 1H12.764V0h11.045Z" />
+                                                                <path data-name="Path 635"
+                                                                    d="M23.809 6.5H0v-1h23.809Z" />
+                                                            </g>
+                                                        </svg> </span>
+                                                </span>
+                                            </div>
+                                            <div class="fx-m-content">
+                                                <h6 class="fx-m-title">
+                                                    <span class="fx-m-title-text">FAST
+                                                        DELIVERY</span>
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-12 elementor-widget-container">
+                                        <div class="features-item">
+                                            <div class="fx-m-icon-wrapper">
+                                                <span class="fx-icon-holder">
+                                                    <span class="fx-m-svg">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="35"
+                                                            height="10.959">
+                                                            <g data-name="Group 420">
+                                                                <path data-name="Path 639"
+                                                                    d="M30.481 1h-17.7V0h17.7Z" />
+                                                                <path data-name="Path 640"
+                                                                    d="M30.637 7.843H.706v-1h29.806a4.031 4.031 0 0 0 2.654-.854 2.707 2.707 0 0 0 .772-2.058 2.677 2.677 0 0 0-.772-2.037 4.207 4.207 0 0 0-2.76-.884l-.058-1a5.183 5.183 0 0 1 3.5 1.155 4.087 4.087 0 0 1-.005 5.554 4.872 4.872 0 0 1-3.206 1.124Z" />
+                                                                <path data-name="Path 641"
+                                                                    d="M4.328 4.426 1.414 7.339l2.914 2.913-.707.707L0 7.339l3.621-3.62Z" />
+                                                            </g>
+                                                        </svg> </span>
+                                                </span>
+                                            </div>
+                                            <div class="fx-m-content">
+                                                <h6 class="fx-m-title">
+                                                    <span class="fx-m-title-text">FREE RETURNS</span>
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-12 elementor-widget-container">
+                                        <div class="features-item">
+                                            <div class="fx-m-icon-wrapper">
+                                                <span class="fx-icon-holder">
+                                                    <span class="fx-m-svg">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="14"
+                                                            height="15.963">
+                                                            <path data-name="Path 642"
+                                                                d="m6.662 0 .3.19a14.771 14.771 0 0 0 2.685 1.292 16.852 16.852 0 0 0 3.038.685l.351.042.078.345c.042.186 1.017 4.6-.52 7.906s-5.509 5.308-5.678 5.391l-.226.112-.225-.115c-.163-.083-4.017-2.086-5.554-5.388S.234 2.752.271 2.566l.072-.362.367-.038a17.478 17.478 0 0 0 3.294-.684A8.992 8.992 0 0 0 6.381.22Zm5.542 3.11a17.145 17.145 0 0 1-2.884-.683 15.45 15.45 0 0 1-2.6-1.215 10.124 10.124 0 0 1-2.388 1.215 17.273 17.273 0 0 1-3.139.688c-.163 1.083-.534 4.432.625 6.922 1.19 2.557 4.056 4.328 4.879 4.8.841-.465 3.8-2.237 4.99-4.8 1.164-2.497.705-5.863.518-6.927Z" />
+                                                        </svg> </span>
+                                                </span>
+                                            </div>
+                                            <div class="fx-m-content">
+                                                <h6 class="fx-m-title" style="margin-top: 3px">
+                                                    <span class="fx-m-title-text">SECURE
+                                                        CHECKOUT</span>
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3 col-12 elementor-widget-container">
+                                        <div class="features-item">
+                                            <div class="fx-m-icon-wrapper">
+                                                <span class="fx-icon-holder">
+                                                    <span class="fx-m-svg">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="5">
+                                                            <g data-name="Group 424">
+                                                                <path data-name="Path 643"
+                                                                    d="M25.768 2.999H.5v-1h25.268Z" />
+                                                                <path data-name="Path 644" d="M1.004 4.47h-1V.531h1Z" />
+                                                                <path data-name="Path 645"
+                                                                    d="M12.557 4.469h-1V.53h1Z" />
+                                                                <path data-name="Rectangle 495" fill="#fff"
+                                                                    d="M24.58 0h5v5h-5z" />
+                                                                <path data-name="Rectangle 495 - Outline"
+                                                                    d="M25.58 1v3h3V1h-3m-1-1h5v5h-5Z" />
+                                                            </g>
+                                                        </svg> </span>
+                                                </span>
+                                            </div>
+                                            <div class="fx-m-content">
+                                                <h6 class="fx-m-title">
+                                                    <span class="fx-m-title-text">ORDER
+                                                        TRACKING</span>
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Features section end -->
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Main section end -->
+
+<div id="quick-view-modal" class="">
+
+</div>
+
+@section Scripts{
+    <script>
+        // Main Slider
+        $(document).ready(function () {
+            var time = 2;
+            var $bar,
+                $slick,
+                isPause,
+                tick,
+                percentTime;
+
+            $slick = $('.slider');
+            $slick.slick({
+                arrows: true,
+                speed: 1200,
+                adaptiveHeight: false
+            });
+
+            $bar = $('.slider-progress .progress');
+
+            function startProgressbar() {
+                resetProgressbar();
+                percentTime = 0;
+                isPause = false;
+                tick = setInterval(interval, 30);
+            }
+
+            function interval() {
+                if (isPause === false) {
+                    percentTime += 1 / (time + 0.1);
+                    $bar.css({
+                        width: percentTime + "%"
+                    });
+                    if (percentTime >= 100) {
+                        $slick.slick('slickNext');
+                        startProgressbar();
+                    }
+                }
+            }
+
+            function resetProgressbar() {
+                $bar.css({
+                    width: 0 + '%'
+                });
+                clearTimeout(tick);
+            }
+
+            startProgressbar();
+
+            $('.slick-next, .slick-prev').click(function () {
+                startProgressbar();
+            });
+
+        });
+
+        // Carousel
+        jQuery(document).ready(function ($) {
+            $('.carousel-slider').slick({
+                dots: false,
+                infinite: true,
+                speed: 400,
+                slidesToShow: 4,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 2000,
+                arrows: false,
+                responsive: [{
+                    breakpoint: 600,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 400,
+                    settings: {
+                        arrows: false,
+                        slidesToShow: 1,
+                        slidesToScroll: 1
+                    }
+                }]
+            });
+        });
+
+    </script>
+
+    <script src="~/./assets/js/app.js"></script>
+
+
+                    }

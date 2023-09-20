@@ -1,0 +1,88 @@
+﻿@model ProductReview
+
+    
+    <div id="review_form_wrapper">
+        <div id="review_form">
+            <div id="respond" class="comment-respond">
+                <h3 id="reply-title" class="comment-reply-title">
+                    Be the first to
+                    review this product
+                    <small>
+                        <a rel="nofollow" id="cancel-comment-reply-link"
+                           href="index.html#respond"
+                           style="display:none;">Cancel reply</a>
+                    </small>
+                </h3>
+                <form asp-action="Review" asp-controller="product" method="post" id="commentform" class="fx-comment-form">
+                    @*<p class="comment-notes">
+                        <span id="email-notes">
+                            Your email address will not be published.
+                        </span>
+                        <span class="required-field-message">
+                            Required fields are
+                            marked <span class="required">*</span>
+                        </span>
+                    </p>*@
+                <div class="comment-form-rating">
+                    <div class="form-group row">
+                        <div class="col">
+                            <label class="col-form-label">Your Rating <span class="required">*</span></label>
+                            &nbsp;&nbsp;&nbsp; Bad&nbsp;
+                            <input asp-for="Rate" type="radio" value="1" name="@Html.NameFor(model=>model.Rate)" id="star1">
+                            &nbsp;
+                            <label for="star1"></label>
+                            <input asp-for="Rate" type="radio" value="2" name="@Html.NameFor(model=>model.Rate)" id="star2">
+                            &nbsp;
+                            <label for="star2"></label>
+                            <input asp-for="Rate" type="radio" value="3" name="@Html.NameFor(model=>model.Rate)" id="star3">
+                            &nbsp;
+                            <label for="star3"></label>
+                            <input asp-for="Rate" type="radio" value="4" name="@Html.NameFor(model=>model.Rate)" id="star4">
+                            &nbsp;
+                            <label for="star4"></label>
+                            <input asp-for="Rate" type="radio" value="5" name="@Html.NameFor(model=>model.Rate)" id="star5" checked>
+                            &nbsp;Good
+                            <label for="star5"></label>
+                        </div>
+                    </div>
+                </div>
+
+
+                    <p class="comment-form-comment">
+                        <textarea asp-for="Text" placeholder="Your Review *" ></textarea>
+                    </p>
+                    <input type="hidden" name="productId" value="@Model.ProductId" />
+                    @*<div class="comment-info">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p class="comment-form-author">
+                                    <input placeholder="Your Name *"/>
+                                </p>
+                            </div>
+                            <div class="col-lg-6">
+                                <p class="comment-form-email">
+                                    <input placeholder="Your Email *"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>*@
+                    @*<p class="comment-form-cookies-consent">
+                        <input id="wp-comment-cookies-consent"
+                               name="wp-comment-cookies-consent" type="checkbox"
+                               value="yes" /> <label for="wp-comment-cookies-consent">
+                            Save my name,
+                            email, and website in this browser for the next time
+                            I comment.
+                        </label>
+                    </p>*@
+                    <p class="form-submit">
+                        <button name="submit" form="commentform" type="submit">
+                            <span class="qodef-m-text">Submit</span>
+                        </button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+   
+

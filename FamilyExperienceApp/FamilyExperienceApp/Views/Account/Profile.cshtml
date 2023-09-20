@@ -1,0 +1,113 @@
+﻿@model ProfileVM
+
+@{
+    int dataOrder = 0;
+}
+    <!-- Main section start -->
+    <div id="fx-page-outer">
+
+        <div id="fx-page-inner">
+
+            <main id="fx-page-content">
+
+                <div class="fx-profile-content">
+                    <h1 class="fx-profile-title"> My account </h1>
+                </div>
+
+
+                <div class="container">
+                    <div id="fx-profile-page">
+                        <div class="product fx-single-inner">
+
+                            <section class="info-tabmenu">
+                                <div class="fx--tabs fx-tabs-wrapper">
+                                    <ul class="tabs fx-detail-tabs" role="tablist">
+                                        <li class="description_tab @(ViewBag.Tab =="Orders"? "active" : "")" data-id="tab-title-description" role="tab">
+                                            <a href="#tab-description">
+                                                Orders </a>
+                                        </li>
+                                        <li class="reviews_tab @(ViewBag.Tab =="Profile"? "active" : "")" data-id="tab-title-reviews" role="tab">
+                                            <a href="#tab-reviews">
+                                                Account Details </a>
+                                        </li>
+                                        <a asp-action="logout" asp-controller="account"> Logout </a>
+                                        <!-- <span class="fx-product-tabs-line" style="width: 124.312px;left: 0px;"></span> -->
+                                    </ul>
+                                    <div class="fx-Tabs-panel d-none @(ViewBag.Tab =="Orders"? "product-active" : "")" role="tabpanel" id="tab-title-description">
+                                        <section class="description">
+                                            <div class="myaccount-content">
+                                                <h3 id="reply-title" class="comment-reply-title">Orders</h3>
+                                                <div class="myaccount-table table-responsive text-center">
+                                                    <table class="table table-bordered">
+                                                        <thead class="thead-light">
+                                                            <tr>
+                                                                <th>No</th>
+                                                                <th>Date</th>
+                                                                <th>Status</th>
+                                                                <th>Total item</th>
+                                                                <th>Total amount</th>
+                                                                <th>Action</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        @foreach (var item in Model.Orders)
+                                                        {
+                                                            dataOrder++;
+                                                            <tr>
+                                                                <td>@dataOrder</td>
+                                                                <td>@item.CreatedAt.ToString("dd MMMM, yyyy")</td>
+                                                                <td>@item.Status</td>
+                                                                <td>@item.OrderItems.Count</td>
+                                                                <td>$@item.TotalAmount</td>
+                                                                <td><a href="cart.html" class="btn ">View</a></td>
+                                                            </tr>
+                                                        }
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <div class="fx-Tabs-panel @(ViewBag.Tab =="Profile"? "product-active" : "")" role="tabpanel" id="tab-title-reviews">
+                                        @Html.Partial("_MemberUpdateFormPartial", Model.Member)
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Main section end -->
+@section Scripts{
+    <script>
+        let product_tabs = document.querySelectorAll('.tabs li');
+
+        for (let tab of product_tabs) {
+            tab.onclick = function (e) {
+                e.preventDefault();
+                let active = document.querySelector('.active');
+
+                active.classList.remove('active');
+                this.classList.add('active');
+
+                let data_id = this.getAttribute('data-id');
+                let contents = document.querySelectorAll('.fx-Tabs-panel');
+
+                for (let content of contents) {
+                    if (content.id === data_id) {
+                        content.classList.remove('d-none');
+                    }
+                    else {
+                        content.classList.add('d-none');
+                    }
+                }
+            }
+        }
+    </script>
+}
+
+    
+   

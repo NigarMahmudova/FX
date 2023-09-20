@@ -1,0 +1,68 @@
+﻿@model MemberRegisterVM
+
+
+    <!-- Main section start -->
+    <div id="fx-page-outer">
+        <main id="fx-page-content">
+
+            <div class="container">
+                <div class="fx-login-content">
+                    <div class="login-content-wrapper">
+                        <span class="login-label">Register</span>
+                        <form id="fx-register-part" asp-action="register" method="post">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <input asp-for="FullName" placeholder="Your FullName *"/>
+                                    <span class="text-danger" asp-validation-for="FullName"></span>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input asp-for="UserName" placeholder="Your UserName *"/>
+                                    <span class="text-danger" asp-validation-for="UserName"></span>
+                                </div>
+                                <div class="col-lg-12">
+                                    <input asp-for="Email" placeholder="Your Email *"/>
+                                <span class="text-danger" asp-validation-for="Email"></span>
+                                </div>
+                                <div class="col-lg-12">
+                                    <input asp-for="Phone" placeholder="Your Phone *"/>
+                                    <span class="text-danger" asp-validation-for="Phone"></span>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input asp-for="Password" placeholder="Password *"/>
+                                    <span class="text-danger" asp-validation-for="Password"></span>
+                                </div>
+                                <div class="col-lg-6">
+                                    <input asp-for="ConfirmPassword" placeholder="Confirm Password *"/>
+                                    <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                                </div>
+                                <div class="col-lg-12">
+                                    <label class="register-privacy-policy">
+                                        Your personal data will be used to support your experience throughout this
+                                        website, to
+                                        manage access to your account, and for other purposes described in our
+                                    </label>
+                                </div>
+                                <div class="single-input-item">
+                                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                                </div>
+                                <div class="login-action">
+                                    <div class="col-lg-12">
+                                        <button type="submit" class="login-action-button">
+                                            <span class="login-btn-text">Register</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-12" style="margin-top: 29px;">
+                                        <a class="login-links-register" asp-controller="account" asp-action="login">
+                                            <span class="login">Login</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <!-- Main section end -->

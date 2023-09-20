@@ -1,0 +1,57 @@
+﻿@model MemberLoginVM
+
+
+    <!-- Main section start -->
+    <div id="fx-page-outer">
+        <main id="fx-page-content">
+
+            <div class="container">
+                <div class="fx-login-content">
+                    <div class="login-content-wrapper">
+                        <span class="login-label">Login</span>
+                        <form id="fx-login-part" asp-action="login" method="post">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <input asp-for="UserName" placeholder="Your UserName *"/>
+                                    <span class="text-danger" asp-validation-for="UserName"></span>
+                                </div>
+                                <div class="col-lg-12">
+                                    <input asp-for="Password" placeholder="Your Password *"/>
+                                    <span class="text-danger" asp-validation-for="Password"></span>
+                                </div>
+                                <div class="col-lg-6 d-flex align-items-center">
+                                    <input type="checkbox" class="login-links-remember" asp-for="RememberMe">
+                                    <label class="login-links-remember-label" asp-for="RememberMe">Remember me</label>
+                                </div>
+                                <div class="col-lg-6">
+                                    <a class="login-links-reset-password" asp-controller="account" asp-action="ForgotPassword">
+                                        <span class="login-text">Forgot password?</span>
+                                    </a>
+                                </div>
+                                <div class="single-input-item">
+                                    <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                                </div>
+                                <div class="login-action">
+                                    <div class="col-lg-12">
+                                        <button type="submit" class="login-action-button">
+                                            <span class="login-btn-text">Login</span>
+                                        </button>
+                                    </div>
+                                    <div class="col-lg-12" style="margin-top: 29px;">
+                                        <a class="login-links-register" asp-controller="account" asp-action="register">
+                                            <span class="login">Register</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+    <!-- Main section end -->
+
+
+   

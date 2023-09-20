@@ -1,0 +1,67 @@
+﻿@model MemberUpdateVM
+
+<div id="reviews" class="fx-Reviews">
+    <div id="review_form_wrapper">
+        <div id="review_form">
+            <div id="respond" class="comment-respond">
+                <h3 id="reply-title" class="comment-reply-title">
+                    Account Details
+                    <small>
+                        <a rel="nofollow" id="cancel-comment-reply-link"
+                           href="index.html#respond"
+                           style="display:none;">Cancel reply</a>
+                    </small>
+                </h3>
+                <form asp-action="memberupdate" method="post" id="commentform" class="fx-comment-form">
+
+                    <div class="comment-info">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input asp-for="FullName" placeholder="Your FullName *"/>
+                                <span class="text-danger" asp-validation-for="FullName"></span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input asp-for="UserName" placeholder="Your UserName *"/>
+                                <span class="text-danger" asp-validation-for="UserName"></span>
+                            </div>
+                            <div class="col-lg-12">
+                                <input asp-for="Email" placeholder="Your Email *"/>
+                                <span class="text-danger" asp-validation-for="Email"></span>
+                            </div>
+                            <div class="col-lg-12">
+                                <input asp-for="Phone" placeholder="Your Phone *"/>
+                                <span class="text-danger" asp-validation-for="Phone"></span>
+                            </div>
+
+                            <h3 id="reply-title" class="comment-reply-title">
+                                Password Changes
+                            </h3>
+
+                            <div class="col-lg-12">
+                                <input asp-for="CurrentPassword" placeholder="Current Password *"/>
+                                <span class="text-danger" asp-validation-for="CurrentPassword"></span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input asp-for="NewPassword" placeholder="New Password *"/>
+                                <span class="text-danger" asp-validation-for="NewPassword"></span>
+                            </div>
+                            <div class="col-lg-6">
+                                <input asp-for="ConfirmPassword" placeholder="Confirm Password *"/>
+                                <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="form-submit">
+                        <button name="submit" type="submit" id="submit"
+                                class="qodef-button qodef-layout--filled"
+                                value="Submit">
+                            <span class="qodef-m-text">Save Changes</span>
+                        </button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>

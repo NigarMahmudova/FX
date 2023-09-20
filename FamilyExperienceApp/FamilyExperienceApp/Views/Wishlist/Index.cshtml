@@ -1,0 +1,147 @@
+﻿@model List<WishlistItem>
+
+    @section Css{
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    }
+    
+
+    <!-- Main section start -->
+    <div id="fx-page-outer" style="margin-top: -95px">
+        
+        <div id="fx-page-inner" class="fx-content-full-width">
+            <main id="fx-page-content">
+                <div class="fx-grid-inner">
+                @if(Model.Count == 0)
+                {
+                    <div class="fx-page-title" style="background-color: #e9e9e9; margin-bottom:94px">
+                        <div class="fx-m-inner">
+                            <div itemprop="breadcrumb" class="fx-breadcrumbs">
+                                <a itemprop="url" class="qodef-breadcrumbs-link" href="#">
+                                    <span itemprop="title">Home</span>
+                                </a>
+                                <span class="fx-breadcrumbs-separator">|</span>
+                                <span itemprop="title" class="fx-breadcrumbs-current">Wishlist</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="empty-wishlist" >
+                        <p class="cart-empty fx-info d-flex align-items-center justify-content-center" style="font-weight: 400; color: #000;
+                        font-size: 35px;line-height: 1.2em;margin: 0;">No products added to the wishlist.</p>
+                        <p class="return-to-shop" style="margin: 20px 0 0;text-align: center;">
+                            <a class="button fx-backward" href="shop.html">
+                                Return to shop
+                            </a>
+                        </p>
+                    </div>
+                }
+                else
+                {
+                    <div class="wishlist-page-title">
+                        <div class="wishlist-content">
+                            <h1 class="wishlist-title">
+                                Wishlist
+                            </h1>
+                        </div>
+                    </div>
+
+                    <div class="container">
+                        <div class="wishlist-items">
+                            <table class="wishlist_table">
+                                <thead>
+                                    <tr>
+                                        <th class="product-remove">
+                                            <span class="nobr">
+                                            </span>
+                                        </th>
+                                        <th class="product-thumbnail"></th>
+                                        <th class="product-name">
+                                            <span class="nobr">
+                                                Product name
+                                            </span>
+                                        </th>
+                                        <th class="product-price">
+                                            <span class="nobr">
+                                                Unit price
+                                            </span>
+                                        </th>
+                                        <th class="product-stock-status">
+                                            <span class="nobr">
+                                                Stock status
+                                            </span>
+                                        </th>
+                                        <th class="product-add-to-cart">
+                                            <span class="nobr">
+                                            </span>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody class="wishlist-items-wrapper">
+                                    @foreach(var item in Model)
+                                    {
+                                        <tr id="yith-wcwl-row-256" data-row-id="256">
+                                            <td class="product-remove">
+                                                <div>
+                                                    <a asp-action="RemoveFromWishlist" asp-controller="wishlist" asp-route-id="@item.ProductId">
+                                                        <i class="fa-regular fa-x"></i>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td class="product-thumbnail">
+                                                <a asp-action="detail" asp-controller="product" asp-route-id="@item.Id">
+                                                    <img width="600" height="734"
+                                                 src="~/manage/uploads/products/@item.Product.ProductImages.FirstOrDefault(x=>x.PosterStatus==true)?.ImageName"
+                                                 class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
+                                                 alt="a">
+                                                </a>
+                                            </td>
+                                            <td class="product-name">
+                                                <a href="#">
+                                                    @item.Product.Name
+                                                </a>
+                                            </td>
+                                            <td class="product-price">
+                                                @if (item.Product.DiscountedPrice > 0)
+                                                {
+                                                    <del aria-hidden="true">
+                                                        <span class="price-amount amount">
+                                                            <span class="price-currencySymbol">$</span>@item.Product.SalePrice
+                                                        </span>
+                                                    </del>
+                                                    <span>
+                                                        <span class="price-amount current-amount">
+                                                            <span class="price-currencySymbol">$</span>@item.Product.DiscountedPrice
+                                                        </span>
+                                                    </span>
+                                                }
+                                                else
+                                                {
+                                                    <span>
+                                                        <span class="price-amount current-amount">
+                                                            <span class="price-currencySymbol">$</span>@item.Product.SalePrice
+                                                        </span>
+                                                    </span>
+                                                }
+
+                                            </td>
+                                            <td class="product-stock-status">
+                                                <span class="wishlist-in-stock">@(item.Product.StockStatus?"In Stock":"Out Stock")</span>
+                                            </td>
+                                            <td class="product-add-to-cart">
+                                                <a href="" class="wishlist-button">Add to cart</a>
+                                            </td>
+                                        </tr>
+                                    }
+                                    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                }
+
+                </div>
+            </main>
+        </div>
+    </div>
+    <!-- Main section end -->

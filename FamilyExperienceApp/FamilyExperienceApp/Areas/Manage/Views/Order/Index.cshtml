@@ -1,0 +1,123 @@
+﻿@model PaginatedList<Order>
+@{
+    ViewData["Title"] = "Index";
+    int dataOrder = (Model.PageIndex - 1) * 4;
+
+}
+<!-- ============================================================== -->
+<!-- Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<div class="page-breadcrumb">
+    <div class="row">
+        <div class="col-5 align-self-center">
+            <h4 class="page-title">Basic Table</h4>
+        </div>
+        <div class="col-7 align-self-center">
+            <div class="d-flex align-items-center justify-content-end">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">Orders</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- End Bread crumb and right sidebar toggle -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->
+<!-- Container fluid  -->
+<!-- ============================================================== -->
+<div class="container-fluid">
+    <!-- ============================================================== -->
+    <!-- Start Page Content -->
+    <!-- ============================================================== -->
+    <div class="row">
+
+
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Orders</h4>
+                    <a asp-action="create" class="btn btn-primary">Create</a>
+                    <a asp-action="ExportOrderInExcel" class="btn btn-primary">Download excel</a>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">FullName</th>
+                                <th scope="col">Email</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Date</th>
+                                <th scope="col">TotalItems</th>
+                                <th scope="col">TotalAmount</th>
+                                <th scope="col">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.Items)
+                            {
+                                dataOrder++;
+                                <tr>
+                                    <th scope="row">@dataOrder</th>
+                                    <td>@item.FullName</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.Status</td>
+                                    <td>@item.CreatedAt.ToString("dd-MM-yyy HH:mm")</td>
+                                    <td>@item.OrderItems.Count</td>
+                                    <td>@item.TotalAmount</td>
+                                    <td>
+                                        <a asp-action="edit" asp-route-id="@item.Id" class="btn btn-warning @(item.Status!=FamilyExperienceApp.Enums.OrderStatus.Pending?"disabled":"")"> Edit</a>
+                                        <a asp-action="detail" asp-controller="order" asp-route-id="@item.Id" class="btn btn-primary">Detail</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                    <nav aria-label="...">
+                        <ul class="pagination">
+                            <li class="page-item @(Model.HasPrev?"":"disabled")">
+                                <a class="page-link" asp-action="index" asp-controller="color" asp-route-page="1">First</a>
+                            </li>
+                            <li class="page-item @(Model.HasPrev?"":"disabled")">
+                                <a class="page-link" asp-action="index" asp-controller="color" asp-route-page="@(Model.PageIndex-1)">Previous</a>
+                            </li>
+
+                            @for (int i = 1; i <= Model.TotalPages; i++)
+                            {
+                                <li class="page-item @(Model.PageIndex==i?"active":"")"><a class="page-link" asp-route-page="@i">@i</a></li>
+                            }
+
+                            <li class="page-item  @(Model.HasNext?"":"disabled")">
+                                <a class="page-link" asp-action="index" asp-controller="color" asp-route-page="@(Model.PageIndex+1)">Next</a>
+                            </li>
+                            <li class="page-item @(Model.HasNext?"":"disabled")">
+                                <a class="page-link" asp-action="index" asp-controller="color" asp-route-page="@Model.TotalPages">Last</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- ============================================================== -->
+    <!-- End PAge Content -->
+    <!-- ============================================================== -->
+
+</div>
+<!-- ============================================================== -->
+<!-- End Container fluid  -->
+<!-- ============================================================== -->
+@section Scripts{
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+                    }
+

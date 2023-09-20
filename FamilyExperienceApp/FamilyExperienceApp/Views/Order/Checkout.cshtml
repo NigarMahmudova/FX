@@ -1,0 +1,76 @@
+﻿@model CheckoutVM
+
+    <!-- Main section start -->
+    <div id="fx-page-outer">
+        <main id="fx-page-content">
+            <div class="container">
+                <div class="checkout-billing-details">
+                    <div class="row">
+                        <!-- Checkout Billing Details -->
+                        <div class="col-lg-6">
+                            @Html.Partial("_OrderCreateFormPartial", Model.Order)
+                        </div>
+
+                        <!-- Order Summary Details -->
+                        <div class="col-lg-6">
+                            <div class="order-summary-details" style="background-color: #e9e9e9; border: 0;">
+                                <h4 class="checkout-title">Your Order Summary</h4>
+                                <div class="order-summary-content">
+                                    <!-- Order Summary Table -->
+                                    <div class="order-summary-table table-responsive text-center">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Products</th>
+                                                    <th>Sizes</th>
+                                                    <th>Total</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach(var item in Model.Items)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        <a>@item.ProductName <strong> × @item.Count</strong></a>
+                                                    </td>
+                                                    <td>
+                                                        <a>@item.SizeName</a>
+                                                    </td>
+                                                    <td>₼ @item.Price.ToString("0.00")</td>
+                                                </tr>
+                                            }
+                                                
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td>Total Amount</td>
+                                                    <td>-</td>
+                                                    <td><strong>₼ @Model.TotalAmount</strong></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                    <!-- Order Payment Method -->
+                                    <div class="order-payment-method">
+                                        <div class="summary-footer-area">
+                                            <div class="custom-control custom-checkbox mt-20 d-flex align-items-baseline">
+                                                <input type="checkbox" class="custom-control-input" id="terms"
+                                                    required />
+                                                <label class="custom-control-label" for="terms">I have read and agree to
+                                                    the website <a href="index.html">terms and conditions.</a></label>
+                                            </div>
+                                        <button form="orderForm" type="submit" class="btn btn-sqr">Place Order</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <!-- Main section end -->
+
+
+    

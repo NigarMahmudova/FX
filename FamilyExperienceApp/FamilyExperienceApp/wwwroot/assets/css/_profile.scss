@@ -1,0 +1,43 @@
+// #fx-page-header-inner {
+//   border-bottom: 0;
+// }
+
+#fx-page-content {
+  .fx-profile-content {
+    height: 375px;
+    background-image: url(../images/My-account-title-img.jpg);
+    background-position: center 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    h1 {
+      font-weight: 400;
+      color: #fff;
+      font-size: 50px;
+      line-height: 1.22em;
+      font-family: "Noto Sans", sans-serif;
+    }
+  }
+
+  .info-tabmenu {
+    ul {
+      a {
+        font-size: 20px;
+      }
+    }
+  }
+
+  .myaccount-content {
+    #reply-title {
+      font-weight: 400;
+      color: #000;
+      font-size: 24px;
+      line-height: 1.375em;
+      font-family: "Noto Sans", sans-serif;
+    }
+  }
+}

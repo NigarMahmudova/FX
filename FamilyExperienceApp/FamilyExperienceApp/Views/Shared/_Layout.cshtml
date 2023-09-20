@@ -1,0 +1,441 @@
+﻿@using FamilyExperienceApp.Helpers;
+@inject LayoutService _layoutService
+@{
+    var basket = _layoutService.GetBasket();
+    var wishlist = _layoutService.GetWishlist();
+    var settings = _layoutService.GetSettings();
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Family Experience</title>
+    <link rel="stylesheet" href="~/./assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;1,6..12,200;1,6..12,300;1,6..12,400&display=swap"
+        rel="stylesheet">
+
+    
+    @RenderSection("Css",required:false)
+    <link rel="stylesheet" href="~/./assets/css/addition.css" />
+    <link rel="stylesheet" href="~/./assets/css/style.css" />
+</head>
+
+<body>
+    <!-- Header section start -->
+    <header id="fx-page-header">
+        <div id="fx-page-header-inner" class="">
+            <a class="fx-header-logo-link fx-height--set fx-source--image" asp-controller="home" asp-action="index" rel="home">
+                <img width="100" height="100" src="~/./assets/images/@settings["Logo"]"
+                    class="fx-header-logo-image fx--main" alt="logo main" />
+
+            </a>
+            <nav class="fx-header-navigation" aria-label="Top Menu">
+                <ul id="main-menu-1" class="menu">
+                    <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                        <a asp-controller="home" asp-action="index"><span class="qodef-menu-item-text @Html.ActiveClass("Home","Index")">Home</span></a>
+                    </li>
+                    <li
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-37 qodef--hide-link qodef-menu-item--wide">
+                        <a asp-controller="shop" asp-action="index"><span class="qodef-menu-item-text @Html.ActiveClass("Shop","Index")">Shop</span></a>
+
+                    </li>
+                    <li
+                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-39 qodef--hide-link qodef-menu-item--narrow">
+                        <a asp-controller="contact" asp-action="index"><span class="qodef-menu-item-text @Html.ActiveClass("Contact","Index")">Contact Us</span></a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="fx-widget-holder fx--one">
+                <div id="fx_core_search_opener" class="widget widget_fx_core_search_opener qodef-header-widget-area-one"
+                    data-area="header-widget-one">
+                    <form asp-action="index" asp-controller="shop" class="fx-search-revealing-form" method="get">
+                        <div class="fx-m-inner">
+                            <input type="text" placeholder="Search" name="search" value="@ViewBag.Search" class="fx-m-form-field" autocomplete="off"
+                                required />
+                            <button type="submit"
+                                class="qodef-opener-icon qodef-m qodef-source--svg-path fx-m-form-submit">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="12.001" height="11.784"
+                                    viewBox="0 0 12.001 11.784">
+                                    <g fill="none" stroke="currentColor">
+                                        <g>
+                                            <ellipse cx="4.869" cy="4.831" rx="4.869" ry="4.831" stroke="none" />
+                                            <ellipse cx="4.869" cy="4.831" rx="4.369" ry="4.331" />
+                                        </g>
+                                        <path d="m7.828 7.655 3.822 3.774" />
+                                    </g>
+                                </svg>
+                            </button>
+                            <div class="fx-m-form-line"></div>
+                        </div>
+                    </form>
+                </div>
+                <div id="fx_core_woo_dropdown_cart-2"
+                    class="widget widget_fx_core_woo_dropdown_cart fx-header-widget-area-one">
+                    <div class="fx-widget-dropdown-cart-outer">
+                        <div class="fx-widget-dropdown-cart-inner">
+                            <a class="fx-m-opener" asp-controller="basket" asp-action="index">
+                                <span class="fx-m-opener-text">Cart</span>
+                                <span class="fx-m-opener-icon">
+                                    <svg class="fx-svg--cart" xmlns="http://www.w3.org/2000/svg" width="12.578"
+                                        height="15.5" viewBox="0 0 12.578 15.5">
+                                        <g fill="none">
+                                            <path
+                                                d="M8.95835778 4.13258219H3.36799794V3.474442c0-1.64011002 1.25390998-2.97443998 2.79518-2.97443998 1.54126978 0 2.79517984 1.33432996 2.79517984 2.97443998v.65814018Z" />
+                                            <path
+                                                d="M6.16317794 1.00000215c-1.26557017 0-2.29517985 1.11002993-2.29517985 2.47443986v.15814018h4.59035969V3.474442c0-1.36440993-1.02960968-2.47443986-2.29517984-2.47443986m0-1.00000024c1.81988 0 3.29517984 1.5555601 3.29517984 3.4744401v1.15814018H2.86799809V3.474442c0-1.91888 1.47529984-3.4744401 3.29517985-3.4744401Z"
+                                                fill="currentColor" />
+                                        </g>
+                                        <path d="M.5 15V3.625h11.578V15Z" fill="none" stroke="currentColor" />
+                                    </svg>
+                                </span>
+                                <span id="basket-count" class="fx-m-opener-count">@basket.Items.Count</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="fx_core_yith_wishlist-3" class="widget widget_fx_core_yith_wishlist fx-header-widget-area-one">
+                    <div class="widget fx-wishlist-widget-holder">
+                        <div class="fx-wishlist-inner">
+                            <a asp-action="index" asp-controller="wishlist" class="fx-wishlist-widget-link" title="View Wishlist">
+                                <span class="fx-wishlist-icon-count-holder">
+                                    <span class="fx-wishlist-widget-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="12.123" height="15"
+                                            viewBox="0 0 12.123 15">
+                                            <g fill="none">
+                                                <path
+                                                    d="M.49998437 13.98803125V.50023828h11.12304688V13.93725L6.61717187 9.7941836l-.30664062-.25390626-.31542969.2421875-5.49511719 4.20556641Z" />
+                                                <path
+                                                    d="M.99998437 1.00023828v11.97558594l5.3232422-4.07421875 4.79980468 3.97265625V1.00023828H.99998437m-1-1h12.12304688v15L6.2988125 10.1794375l-6.29882813 4.82080078v-15Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </svg>
+                                    </span>
+                                    <span class="fx-wishlist-count">@wishlist.Items.Count</span>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div id="fx_membership_login_opener-2"
+                    class="widget widget_fx_membership_login_opener fx-header-widget-area-one widget_fx_core_woo_dropdown_cart">
+                    <div class="fx-login-opener-widget fx-user-logged--out">
+                        <a href="#" class="fx-login-opener">
+                            <span class="fx-login-opener-text">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="14.779" height="15"
+                                    viewBox="0 0 14.779 15">
+                                    <g fill="none">
+                                        <g transform="translate(3.39)" stroke="currentColor">
+                                            <circle cx="4" cy="4" r="4" stroke="none" />
+                                            <circle cx="4" cy="4" r="3.5" fill="none" />
+                                        </g>
+                                        <g>
+                                            <path
+                                                d="M14.17692184 14.50041529H.60172868c.83336556-3.89600897 3.61719537-6.66541979 6.78759837-6.66541979 3.17023659 0 5.954216 2.7694206 6.7875948 6.66541979Z" />
+                                            <path
+                                                d="M13.53995705 14.00041529c-.92537117-3.34392453-3.3820572-5.66541982-6.15063-5.66541982-2.76871014 0-5.2252841 2.32154107-6.15064514 5.66541982h12.30127514m1.23869991 1H-.00000295c.70938-4.44227982 3.8174499-7.6654198 7.38933-7.6654198 3.57176018 0 6.67930984 3.22313998 7.38908958 7.66388009l.00024033.0015397Z"
+                                                fill="currentColor" />
+                                        </g>
+                                    </g>
+                                </svg>
+                            </span>
+                        </a>
+                        <ul class="dropdown-list fx-widget-dropdown-cart-content">
+                          @if(User.Identity.IsAuthenticated && User.IsInRole("Member"))
+                          {
+                              <li><a asp-action="profile" asp-controller="account">@User.Identity.Name</a></li>
+                              <li><a asp-action="logout" asp-controller="account">Logout</a></li>
+                              <li><a asp-action="profile" asp-controller="account">my account</a></li>
+                          }
+                          else
+                          {
+                              <li><a asp-controller="account" asp-action="login">login</a></li>
+                              <li><a asp-controller="account" asp-action="register">register</a></li>
+                              <li><a asp-controller="account" asp-action="profile">my account</a></li>                    
+                          }
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="fx-header-sticky fx-custom-header-layout fx-appearance--down">
+            <div class="fx-header-sticky-inner ">
+                <a class="fx-header-logo-link fx-height--set fx-source--image" href="index.html">
+                    <img width="184" height="36"
+                        src="https://corsen.qodeinteractive.com/wp-content/uploads/2023/01/corsen-main-logo-x2.png"
+                        class="fx-header-logo-image fx--main" alt="logo main" />
+                </a>
+                <nav class="fx-header-navigation" aria-label="Top Menu">
+                    <ul id="main-menu-2" class="menu">
+                        <li class="menu-item menu-item-type-custom menu-item-object-custom">
+                            <a href="#"><span class="qodef-menu-item-text">Home</span></a>
+                        </li>
+                        <li
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-36 qodef--hide-link qodef-menu-item--narrow">
+                            <a href="#"><span class="qodef-menu-item-text">Pages</span></a>
+                        </li>
+                        <li
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-37 qodef--hide-link qodef-menu-item--wide">
+                            <a href="#"><span class="qodef-menu-item-text">Shop</span></a>
+                        </li>
+                        <li
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-38 qodef--hide-link qodef-menu-item--narrow">
+                            <a href="#"><span class="qodef-menu-item-text">Portfolio</span></a>
+                        </li>
+                        <li
+                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-39 qodef--hide-link qodef-menu-item--narrow">
+                            <a href="#"><span class="qodef-menu-item-text">Blog</span></a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="fx-widget-holder fx--one">
+                    <div id="corsen_core_search_opener-5"
+                        class="widget widget_corsen_core_search_opener qodef-sticky-right">
+                        <form action="https://corsen.qodeinteractive.com/" class="fx-search-revealing-form"
+                            method="get">
+                            <div class="fx-m-inner">
+                                <input type="text" placeholder="Search" name="s" class="fx-m-form-field"
+                                    autocomplete="off" required />
+                                <button type="submit"
+                                    class="fx-opener-icon qodef-m qodef-source--svg-path fx-m-form-submit">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="12.001" height="11.784"
+                                        viewBox="0 0 12.001 11.784">
+                                        <g fill="none" stroke="currentColor">
+                                            <g>
+                                                <ellipse cx="4.869" cy="4.831" rx="4.869" ry="4.831" stroke="none" />
+                                                <ellipse cx="4.869" cy="4.831" rx="4.369" ry="4.331" />
+                                            </g>
+                                            <path d="m7.828 7.655 3.822 3.774" />
+                                        </g>
+                                    </svg></button>
+                                <div class="fx-m-form-line"></div>
+                            </div>
+                        </form>
+                    </div>
+                    <div id="fx_core_yith_wishlist-7" class="widget widget_fx_core_yith_wishlist fx-sticky-right">
+                        <div class="widget fx-wishlist-widget-holder">
+                            <div class="fx-wishlist-inner">
+                                <a href="wishlist/index.html" class="fx-wishlist-widget-link" title="View Wishlist">
+                                    <span class="fx-wishlist-icon-count-holder">
+                                        <span class="fx-wishlist-widget-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="12.123" height="15"
+                                                viewBox="0 0 12.123 15">
+                                                <g fill="none">
+                                                    <path
+                                                        d="M.49998437 13.98803125V.50023828h11.12304688V13.93725L6.61717187 9.7941836l-.30664062-.25390626-.31542969.2421875-5.49511719 4.20556641Z" />
+                                                    <path
+                                                        d="M.99998437 1.00023828v11.97558594l5.3232422-4.07421875 4.79980468 3.97265625V1.00023828H.99998437m-1-1h12.12304688v15L6.2988125 10.1794375l-6.29882813 4.82080078v-15Z"
+                                                        fill="currentColor" />
+                                                </g>
+                                            </svg>
+                                        </span>
+                                        <span class="fx-wishlist-count">0</span>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="fx_membership_login_opener-5"
+                        class="widget widget_fx_membership_login_opener fx-sticky-right">
+                        <div class="fx-login-opener-widget fx-user-logged--out">
+                            <a href="#" class="fx-login-opener">
+                                <span class="fx-login-opener-text">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="14.779" height="15"
+                                        viewBox="0 0 14.779 15">
+                                        <g fill="none">
+                                            <g transform="translate(3.39)" stroke="currentColor">
+                                                <circle cx="4" cy="4" r="4" stroke="none" />
+                                                <circle cx="4" cy="4" r="3.5" fill="none" />
+                                            </g>
+                                            <g>
+                                                <path
+                                                    d="M14.17692184 14.50041529H.60172868c.83336556-3.89600897 3.61719537-6.66541979 6.78759837-6.66541979 3.17023659 0 5.954216 2.7694206 6.7875948 6.66541979Z" />
+                                                <path
+                                                    d="M13.53995705 14.00041529c-.92537117-3.34392453-3.3820572-5.66541982-6.15063-5.66541982-2.76871014 0-5.2252841 2.32154107-6.15064514 5.66541982h12.30127514m1.23869991 1H-.00000295c.70938-4.44227982 3.8174499-7.6654198 7.38933-7.6654198 3.57176018 0 6.67930984 3.22313998 7.38908958 7.66388009l.00024033.0015397Z"
+                                                    fill="currentColor" />
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Header section end -->
+
+    <!-- Mobile header start -->
+    <header id="fx-page-mobile-header">
+        <div id="fx-page-mobile-header-inner" class="">
+            <a itemprop="url" class="fx-mobile-header-logo-link" href="#">
+                <img width="147" height="55" src="~/./assets/images/fx_logo-removebg.png" class="fx-header-logo-image qodef--main" alt="logo main" /></a>
+            <div class="fx-widget-holder">
+                <div id="fx-mobile-dropdown-cart" class="fx-mobile-dropdown-cart widget" data-area="mobile-header">
+                    <div class="fx-dropdown-cart-outer">
+                        <div class="fx-dropdown-cart-inner">
+                            <a class="fx-opener" href="#">
+                                <span class="fx-opener-text">Cart</span>
+                                <span class="fx-opener-icon"><svg class="qodef-svg-cart"
+                                        xmlns="http://www.w3.org/2000/svg" width="12.578" height="15.5" viewBox="0 0 12.578 15.5">
+                                        <g fill="none">
+                                            <path
+                                                d="M8.95835778 4.13258219H3.36799794V3.474442c0-1.64011002 1.25390998-2.97443998 2.79518-2.97443998 1.54126978 0 2.79517984 1.33432996 2.79517984 2.97443998v.65814018Z" />
+                                            <path
+                                                d="M6.16317794 1.00000215c-1.26557017 0-2.29517985 1.11002993-2.29517985 2.47443986v.15814018h4.59035969V3.474442c0-1.36440993-1.02960968-2.47443986-2.29517984-2.47443986m0-1.00000024c1.81988 0 3.29517984 1.5555601 3.29517984 3.4744401v1.15814018H2.86799809V3.474442c0-1.91888 1.47529984-3.4744401 3.29517985-3.4744401Z"
+                                                fill="currentColor" />
+                                        </g>
+                                        <path d="M.5 15V3.625h11.578V15Z" fill="none" stroke="currentColor" />
+                                    </svg></span>
+                                <span class="fx-opener-count">0</span>
+                            </a>
+                            <a href="#" class="fx-opener-icon fx-mobile-header-opener">
+                                <span class="fx-m-icon fx--open">
+                                    <i class="fa-solid fa-bars"></i>
+                                </span>
+                                <span class="fx-m-icon fx--close">
+                                <svg class="fx-svg--menu-close" xmlns="http://www.w3.org/2000/svg" width="12.735" height="12.734" viewBox="0 0 12.735 12.734"><g transform="translate(-10846.042 9588.293)"><path d="M10846.4-9587.939l12.027,12.026" transform="translate(-0.001)" fill="none" stroke="currentColor" stroke-width="1"></path><path d="M0,0,12.027,12.027" transform="translate(10858.423 -9587.939) rotate(90)" fill="none" stroke="currentColor" stroke-width="1"></path></g></svg> </span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="fx-mobile-header-navigation fx--close" role="navigation" aria-label="Mobile Menu">
+            <ul id="menu-main-menu-4" class="">
+                <li
+                    class="menu-item menu-item-type-custom menu-item-object-custom">
+                    <a href="#"><span class="fx-menu-item-text">Home</span></a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-custom menu-item-object-custom">
+                    <a href="#"><span class="fx-menu-item-text">Shop</span></a>
+                </li>
+                <li
+                    class="menu-item menu-item-type-custom menu-item-object-custom">
+                    <a href="#"><span class="fx-menu-item-text">Contact Us</span></a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Mobile header end -->
+
+
+    @RenderBody()
+
+
+    <!-- Footer section start -->
+    <footer id="fx-page-footer">
+        <div id="fx-page-footer-top-area">
+            <div id="fx-page-footer-top-area-inner">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <div id="fx_core_single_image-2" class="widget widget_corsen_core_single_image"
+                                data-area="fx-footer-top-area-column-1">
+                                <div class="fx-m-image">
+                                    <a itemprop="url" href="index.html" target="_self">
+                                        <img itemprop="image" src="~/./assets/images/@settings["Logo"]" width="100"
+                                            height="100" alt="" />
+                                    </a>
+                                </div>
+                            </div>
+                            <div id="block-1" class="footer-text" data-area="fx-footer-top-area-column-1">
+                                <p>Sed ut perspiciatis unde omnis iste natus error sit
+                                    voluptatem accusantium</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div id="footer-block" class="widget widget_block" data-area="fx-footer-top-area-column-2">
+                                <p class="fx-footer-list-title">SUPPORT</p>
+                                <ul class="fx-footer-list">
+                                    <li><a href="contact-us/index.html">Help &amp; Contact Us</a></li>
+                                    <li><a href="faq-page/index.html">Return &amp; Refunds</a></li>
+                                    <li><a href="shop/index.html">Online Stores</a></li>
+                                    <li><a href="privacy-policy/index.html">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div id="footer-block" class="widget widget_block" data-area="fx-footer-top-area-column-3">
+                                <p class="fx-footer-list-title">COMPANY</p>
+                                <ul class="fx-footer-list">
+                                    <li><a href="about-us/index.html">What we do</a></li>
+                                    <li><a href="gift-card/index.html">Gift Offers</a></li>
+                                    <li><a href="blog-standard/index.html">Latest Posts</a></li>
+                                    <li><a href="faq-page/index.html">F.A.Q</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div id="footer-block" class="widget widget_block" data-area="fx-footer-top-area-column-4">
+                                <p class="fx-footer-list-title">LOCATIONS</p>
+                                <ul class="fx-footer-list">
+                                    <li><a href="#">Vienna, Hansalgasse, Austria</a></li>
+                                    <li><a href="#">Berlin, Buschallee, Germany</a></li>
+                                    <li><a href="#">The Piazza, London, UK</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer-bottom-area">
+            <div id="footer-bottom-area-inner" class="fx-content-full-width">
+                <div class="container">
+                    <div class="d-flex">
+                        <div class="col-lg-9">
+                            <p class="fx-copyright-text">© 2023 <a href="https://qodeinteractive.com/" target="_blank"
+                                    rel="nofollow noopener">Qode Interactive</a>, All Rights
+                                Reserved</p>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="fx-social-icons-group">
+                                <span class="fx-icon-holder fx--textual">
+                                    <a itemprop="url" href="https://www.instagram.com/qodeinteractive/"
+                                        target="http://_blank">IN</a> </span>
+                                <span class="fx-icon-holder fx--textual">
+                                    <a itemprop="url" href="https://www.youtube.com/QodeInteractiveVideos"
+                                        target="http://_blank">YT </a> </span>
+                                <span class="fx-icon-holder fx--textual" data-hover-color="#a8a8a8">
+                                    <a itemprop="url" href="https://www.pinterest.com/qodeinteractive/"
+                                        target="http://_blank">PI</a> </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Footer section end -->
+
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    
+
+    <script src="~/./assets/js/main.js"></script>
+
+    <!-- <script src="./assets/js/basket.js"></script> -->
+    @RenderSection("Scripts",required:false)
+</body>
+
+</html>

@@ -1,0 +1,429 @@
+// Header section start
+#fx-page-header {
+  height: 90px;
+  background-color: rgba(255, 255, 255, 0);
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+  z-index: 100;
+}
+
+#fx-page-header-inner,
+.fx-header-sticky-inner {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+  margin-left: 70px !important;
+  margin-right: 70px !important;
+  border-bottom-color: #000000;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  padding: 0;
+  margin: 0 140px;
+
+  .fx-header-logo-link {
+    margin-right: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    max-height: 100%;
+
+    img {
+      display: block;
+      margin: auto 0;
+      transition: opacity 0.3s ease;
+
+      .fx--main {
+        opacity: 1;
+      }
+
+      :not(.fx--main) {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  .fx-header-navigation {
+    margin-right: auto;
+    height: 100%;
+
+    > ul {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      white-space: nowrap;
+
+      > li {
+        height: 100%;
+        margin: 0 24px;
+
+        :first-child {
+          margin-left: 0;
+        }
+
+        > a {
+          position: relative;
+          display: flex;
+          align-items: center;
+          height: 100%;
+          font-weight: 400;
+          color: #000;
+          font-size: 11px;
+          font-weight: 600;
+          line-height: 1.455em;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          font-family: "Noto Sans", sans-serif;
+        }
+      }
+    }
+
+    ul {
+      margin: 0 !important;
+      padding: 0;
+      list-style: none;
+    }
+  }
+
+  .fx-widget-holder {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-left: 24px;
+
+    .widget {
+      margin: 0 12px;
+
+      :before {
+        content: "";
+        display: table;
+        table-layout: fixed;
+      }
+
+      :first-child {
+        margin-left: 0;
+      }
+
+      :last-child {
+        margin-right: 0;
+      }
+    }
+
+    .widget_fx_core_search_opener {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.fx-search-revealing-form {
+  position: relative;
+  border-bottom: 1px solid transparent;
+
+  .fx-m-inner {
+    display: flex;
+    align-items: center;
+  }
+
+  .fx-m-form-field {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    line-height: 1;
+    text-transform: uppercase;
+    padding: 0 3px 0 0;
+    margin-bottom: 0;
+    border: 0;
+    border-radius: 0;
+    outline-offset: 0;
+    width: 56px;
+    transition: width 0.4s ease-out;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .fx-m-form-submit {
+    position: relative;
+    right: 0;
+    top: 1px;
+    padding: 0;
+    margin: 0;
+    color: #000;
+    background: 0 0;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .fx-m-form-line {
+    width: 0;
+    height: 1px;
+    background-color: currentColor;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}
+
+.fx-m-inner .fx-m-form-field::placeholder {
+  color: #000;
+}
+
+.widget_fx_core_woo_dropdown_cart {
+  color: #000;
+  align-items: center;
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  position: relative;
+
+  .fx-widget-dropdown-cart-inner,
+  .widget_shopping_cart .fx-widget-dropdown-cart-inner {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .fx-m-opener {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    margin: 0;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    .fx-m-opener-text {
+      margin-right: 8px;
+    }
+
+    .fx-m-opener-icon {
+      display: flex;
+      margin-bottom: 3px;
+    }
+
+    .fx-m-opener-count {
+      margin-left: 5px;
+    }
+  }
+
+  .fx-widget-dropdown-cart-content {
+    left: auto;
+    opacity: 0 !important;
+    position: absolute;
+    right: -8px;
+    top: 100%;
+    visibility: hidden !important;
+    width: 136px;
+    border: 1px solid #000;
+    background-color: #fff;
+    display: block;
+    padding: 26px 0;
+    text-align: left;
+    transition: opacity 0.25s ease-out, visibility 0.25s ease-out;
+
+    > * {
+      padding: 0 26px !important;
+    }
+
+    li {
+      a {
+        &:hover {
+            border-bottom: 1px solid #000;
+        }
+      }
+    }
+  }
+
+  :hover .fx-widget-dropdown-cart-content {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
+.widget_fx_core_yith_wishlist .fx-wishlist-widget-holder .fx-wishlist-inner {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+
+  .fx-wishlist-widget-link {
+    display: flex;
+    align-items: center;
+
+    .fx-wishlist-icon-count-holder {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      margin: 0;
+      font-family: "Noto Sans", sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .fx-wishlist-widget-icon {
+      margin-bottom: 2px;
+      line-height: 1;
+    }
+
+    .fx-wishlist-count {
+      margin-left: 5px;
+    }
+  }
+}
+
+.fx-login-opener-widget .fx-login-opener {
+  position: relative;
+  display: block;
+  line-height: 1;
+}
+
+button {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.417em;
+  letter-spacing: 0.1em;
+  width: auto;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 0;
+  outline: 0;
+  transition: color 0.25s ease-out, background-color 0.25s ease-out,
+    border-color 0.25s ease-out;
+}
+
+.fx-header-sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 70px;
+  width: 100%;
+  background-color: #fff;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease, top 0.5s ease;
+  z-index: 100;
+
+  .fx-header-sticky-inner {
+    justify-content: flex-start;
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 70px;
+    border-bottom: 1px solid #000;
+  }
+}
+
+.fx-header--sticky-display .fx-header-sticky {
+  transform: translateY(0);
+}
+
+// Header section end
+
+// Footer section start
+
+#fx-page-footer {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  vertical-align: top;
+
+  #fx-page-footer-top-area {
+    background-color: #fff;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    #fx-page-footer-top-area-inner {
+      padding-top: 80px;
+      padding-bottom: 71px;
+      border-top: 1px solid #000;
+
+      .footer-text {
+        margin: 0 30px 61px 20px;
+      }
+
+      #footer-block {
+        padding-top: 25px;
+      }
+
+      .fx-footer-list-title {
+        font-family: "Noto Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 400;
+        letter-spacing: 0.05em;
+        line-height: 18px;
+        text-transform: uppercase;
+        margin-top: 0;
+        margin-bottom: 17px;
+        padding-left: 2rem;
+      }
+
+      .fx-footer-list {
+        list-style: none;
+
+        li {
+          margin: 0 0 8px;
+
+          a {
+            font-family: "Noto Sans", sans-serif;
+            font-size: 13px;
+            font-weight: 400;
+            letter-spacing: 0;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#footer-bottom-area-inner {
+  padding-top: 10px;
+  padding-bottom: 8px;
+  border-top: 1px solid #000;
+
+  .fx-copyright-text {
+    font-family: "Noto Sans", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 17px;
+    text-transform: uppercase;
+    margin: 10px 0;
+    margin-left: 30px;
+  }
+
+  .fx-social-icons-group {
+    float: right;
+
+    .fx-icon-holder {
+      padding: 0 17px;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+﻿@model AdminLoginVM
+
+
+@{
+    Layout = null;
+}
+
+
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords"
+          content="wrappixel, admin dashboard, html css dashboard, web dashboard, bootstrap 5 admin, bootstrap 5, css3 dashboard, bootstrap 5 dashboard, Nice lite admin bootstrap 5 dashboard, frontend, responsive bootstrap 5 admin template, Nice admin lite design, Nice admin lite dashboard bootstrap 5 dashboard template">
+    <meta name="description"
+          content="Nice Admin Lite is powerful and clean admin dashboard template, inpired from Bootstrap Framework">
+    <meta name="robots" content="noindex,nofollow">
+    <title>FX Admin</title>
+    <link rel="canonical" href="https://www.wrappixel.com/templates/niceadmin-lite/" />
+    <!-- Favicon icon -->
+    <link href="~/../../manage/assets/css/login.css" rel="stylesheet">
+</head>
+
+
+
+<body id="particles-js">
+<div class="animated bounceInDown">
+  <div class="container">
+    <span class="error animated tada" id="msg"></span>
+    <form name="form1" class="box" onsubmit="return checkStuff()" method="post">
+      <h4 style="margin-bottom: 20px">Admin<span>Dashboard</span></h4>
+      <h5>Sign in to your account.</h5>
+        <input asp-for="UserName" placeholder="UserName" autocomplete="off">
+        <i class="typcn typcn-eye" id="eye"></i>
+        <input asp-for="Password" placeholder="Passsword" id="pwd" autocomplete="off">
+                <label>
+                    <input asp-for="RememberMe" type="checkbox" style="margin-right: -20px">
+                    <label asp-for="RememberMe" class="rmb">Remember me</label>
+                </label>
+                <a href="#" class="forgetpass">Forget Password?</a>
+                <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+        <input type="submit" value="Sign in" class="btn1">
+      </form>
+  </div> 
+</div>
+
+    <script src="~/../../manage/assets/js/login.js"></script>
+</body>
+
+</html>

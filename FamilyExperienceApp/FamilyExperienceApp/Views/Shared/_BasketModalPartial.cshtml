@@ -1,0 +1,109 @@
+﻿@model Product
+<div class="quick-view-overlay"></div>
+<div class="quick-view-wrapper" style="left: 192.5px; width: 964px; height: 2px;">
+    <div class="quick-view-main">
+        <div class="quick-view-head">
+            <a href="#" id="quick-view-close">X</a>
+        </div>
+        <div id="quick-view-content">
+            <div class="row">
+
+
+                <div class="col-lg-6">
+                    <div class="single-img">
+                        <img height="480px" src="~/manage/uploads/products/@Model.ProductImages.FirstOrDefault(x=>x.PosterStatus==true)?.ImageName"
+                             alt="" />
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="summary-content">
+                        <h1 class="modal-title">
+                            @Model.Name
+                        </h1>
+                        <p class="price">
+                            <span class="modal-amount">
+                                @if (Model.DiscountedPrice > 0)
+                                {
+                                    <del aria-hidden="true">
+                                        <span class="woocommerce-Price-amount amount">
+                                            <span class="woocommerce-Price-currencySymbol">&#036;</span>@Model.SalePrice
+                                        </span>
+                                    </del>
+                                    <ins>
+                                        <span class="woocommerce-Price-amount amount">
+                                            <span class="woocommerce-Price-currencySymbol">&#036;</span>@Model.DiscountedPrice
+                                        </span>
+                                    </ins>
+                                }
+                                else
+                                {
+                                    <ins>
+                                        <span class="woocommerce-Price-amount amount">
+                                            <span class="woocommerce-Price-currencySymbol">&#036;</span>@Model.SalePrice
+                                        </span>
+                                    </ins>
+                                }
+                                @*<bdi>
+                                    <span class="modal-Price-currencySymbol">$</span>300.00
+                                </bdi>*@
+                            </span>
+                        </p>
+                        <div class="modal-desc">
+                            <p>
+                                @Model.Desc
+                            </p>
+                        </div>
+
+                        <!-- color -->
+                        <div class="ilgiliUrunSecenek" id="productDetailRelated">
+                            <a class="detailLink detailUrl" href="#">
+                                <div class="color-box"
+                                     style="background-color: @Model.Color.Name; width: 20px; height: 20px; margin-bottom: 15px; border: 1px solid #000;">
+                                </div>
+                            </a>
+                        </div>
+
+                        <form asp-action="addtobasket" asp-controller="product" asp-route-id="@Model.Id" method="post">
+                            <!-- size -->
+                            <div class="MiddleList" style="margin-top: 0px;">
+                                @if (Model.StockStatus)
+                                {
+                                    <div id="divUrunEkSecenek" class="Formline BorderNone">
+                                        <div class="eksecenekLine selectvaryasyon">
+                                            <span class="right_line">
+                                                <select id="sizeId" name="sizeId" class="eksecenekSelect">
+                                                    @foreach (var item in Model.ProductSizes)
+                                                    {
+                                                        <option value="@item.Size.Id">@item.Size.Name</option>
+                                                    }
+                                                </select>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" id="productId" name="id" value="@Model.Id" />
+                                }
+                                else
+                                {
+                                    <div id="divStokYok">
+                                        Item is out of stock.
+                                    </div>
+                                }
+
+                                <div class="buybutton" id="divSatinAl">
+                                    <button name="add-to-cart" id="basketSubmitBtn" class="js_add_to_cart button alt wp-element-button">
+                                        Add to cart
+                                    </button>
+                                </div>
+                            </div>
+                            </form>
+
+                        <a class="quick-view-shortcode" asp-action="detail" asp-controller="product" asp-route-id="@Model.Id" target="_self">
+                            <span class="qodef-m-text">View More</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

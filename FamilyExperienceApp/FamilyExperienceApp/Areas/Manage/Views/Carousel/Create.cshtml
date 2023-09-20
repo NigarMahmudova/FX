@@ -1,0 +1,30 @@
+﻿@model ImageCarousel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>Carousel Create</h1>
+        </div>
+        <div class="col-md-8">
+            <form method="post" asp-action="create" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="ImageFile">ImageFile</label>
+                    <input asp-for="ImageFile" class="form-control" onchange="readURL(this);">
+                    <span class="text-danger" asp-validation-for="ImageFile"></span>
+                    <img id="sliderImage" src="http://placehold.it/180" alt="slider image" />
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts{
+    @Html.Partial("_ValidationScriptsPartial")
+}

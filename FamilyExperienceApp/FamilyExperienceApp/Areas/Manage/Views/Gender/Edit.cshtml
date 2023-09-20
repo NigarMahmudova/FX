@@ -1,0 +1,49 @@
+﻿@model Gender
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1>gender Edit</h1>
+        </div>
+        <div class="col-md-8">
+            <form method="post" asp-action="edit" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label asp-for="Title">Title</label>
+                    <input asp-for="Title" class="form-control">
+                    <span class="text-danger" asp-validation-for="Title"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="BtnText">BtnText</label>
+                    <input asp-for="BtnText" class="form-control">
+                    <span class="text-danger" asp-validation-for="BtnText"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="BtnUrl">BtnUrl</label>
+                    <input asp-for="BtnUrl" class="form-control">
+                    <span class="text-danger" asp-validation-for="BtnUrl"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ImageFile">ImageFile</label>
+                    <input asp-for="ImageFile" class="form-control" onchange="readURL(this);">
+                    <span class="text-danger" asp-validation-for="ImageFile"></span>
+                    <input type="hidden" name="ImageName" value="@Model.ImageName" />
+                    <img id="sliderImage" src="~/manage/uploads/genders/@Model.ImageName" />                    
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    @Html.Partial("_ValidationScriptsPartial")
+}
+

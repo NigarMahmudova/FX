@@ -1,0 +1,81 @@
+﻿
+@model List<Product>
+
+
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-3 col-md-6 col-12" style=" margin-bottom: 15px;">
+            <div id="1" class="fx-e-inner fx-line">
+                <div class="fx-product-image">
+                    @if(item.IsNew){
+                        <span class="fx-product-mark fx-new">New</span>
+                    }
+                    <img width="410" height="556"
+                     src="~/manage/uploads/products/@item.ProductImages.FirstOrDefault(x=>x.PosterStatus==true)?.ImageName"
+                     class="attachment-full size-full" alt="a" />
+                    <div class="fx-e-image-hover">
+                        <img width="410" height="556"
+                         src="~/manage/uploads/products/@item.ProductImages.FirstOrDefault(x=>x.PosterStatus==false)?.ImageName"
+                         class="attachment-full size-full" alt="" />
+                    </div>
+                    <div class="fx-product-image-inner">
+                        <div class="fx-add-to-wishlist">
+
+                            <div class="fx-add-button">
+                                <a asp-action="addtowishlist" asp-controller="product" asp-route-id="@item.Id"
+                               class="add_to_wishlist single_add_to_wishlist">
+                                    <i class="fx-icon fa fa-heart-o"></i>
+                                    <span>Add to wishlist</span>
+                                </a>
+                            </div>
+
+                        </div>
+                        <a href="#" class="button fx-button">
+                            Quick
+                            View
+                        </a>
+                    </div>
+                    <a asp-action="detail" asp-controller="product" asp-route-id="@item.Id"
+                   class="woocommerce-LoopProduct-link woocommerce-loop-product__link"></a>
+                </div>
+                <div class="fx-product-content d-flex">
+                    <h6 itemprop="name"
+                    class="fx-product-title entry-title">
+                        <a itemprop="url" class="fx-product-title-link"
+                       asp-action="detail" asp-controller="product" asp-route-id="@item.Id">
+                            @item.Name
+                        </a>
+                    </h6>
+                    <div class="fx-product-price price">
+                        @if(item.DiscountedPrice > 0)
+                        {
+                            <del aria-hidden="true">
+                                <span class="woocommerce-Price-amount amount">
+                                    <span class="woocommerce-Price-currencySymbol">₼</span>@item.SalePrice
+                                </span>
+                            </del>
+                            <ins>
+                                <span class="woocommerce-Price-amount amount">
+                                    <span class="woocommerce-Price-currencySymbol">₼</span>@item.DiscountedPrice
+                                </span>
+                            </ins>
+                        }
+                        else
+                        {
+                            <ins>
+                                <span class="woocommerce-Price-amount amount">
+                                    <span class="woocommerce-Price-currencySymbol">₼</span>@item.SalePrice
+                                </span>
+                            </ins>
+                        }
+
+                    </div>
+                    <a asp-controller="product" asp-action="getdetail" asp-route-id="@item.Id" data-toggle="modal" class="button modal-btn">
+                        Add to cart
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+</div>

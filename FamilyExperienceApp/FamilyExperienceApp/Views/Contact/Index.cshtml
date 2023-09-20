@@ -1,0 +1,110 @@
+﻿﻿
+@inject LayoutService _layoutService
+@model ContactVM
+@{
+    var settings = _layoutService.GetSettings();
+}
+
+<!-- Main section start -->
+<div id="fx-page-outer" style="margin-top: -25px;">
+    <main id="fx-page-content">
+        <div class="contact-page-title">
+                        <div class="wishlist-content">
+                            <h1 class="c-title">
+                                Contact Us
+                            </h1>
+                        </div>
+                    </div>
+        <div class="container">
+            <div class="checkout-billing-details" style="padding-top: 100px">
+                <div class="row">
+                    <!-- Checkout Billing Details -->
+                    <div class="col-lg-7">
+                        <div class="checkout-billing-details-wrap">
+                            <h4 class="checkout-title">Tell us your problem</h4>
+                            <div class="billing-form-wrap">
+                                <form id="orderForm" asp-action="create" method="post">
+                                    @if (User.Identity.IsAuthenticated && User.IsInRole("Member"))
+                                    {
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="single-input-item">
+                                            <input type="text" id="FullName" for="FullName" disabled value="@Model.FullName" placeholder="FullName *" required />
+                                            <input type="hidden" name="FullName" value="@Model.FullName">
+                                        </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="single-input-item">
+                                            <input type="email" id="Email" for="Email" disabled value="@Model.Email" placeholder="Email Address *" required />
+                                            <input type="hidden" name="Email" value="@Model.Email">
+                                        </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="single-input-item">
+                                            <input type="text" id="Phone" for="Phone" disabled value="@Model.Phone" placeholder="Phone *" />
+                                            <input type="hidden" name="Phone" value="@Model.Phone">
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <div class="single-input-item">
+                                                    <input asp-for="FullName" placeholder="FullName *" required />
+                                                    <span asp-validation-for="FullName" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div class="single-input-item">
+                                                    <input asp-for="Email" placeholder="Email Address *" required />
+                                                    <span asp-validation-for="Email" class="text-danger"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="single-input-item">
+                                            <input asp-for="Phone" placeholder="Phone *" />
+                                        </div>
+                                    }
+
+
+                                    <div class="single-input-item">
+                                        <input asp-for="Subject" placeholder="Subject" required />
+                                        <span asp-validation-for="Subject" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="single-input-item">
+                                        <textarea asp-for="Message" cols="30" rows="3" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                                        <span asp-validation-for="Message" class="text-danger"></span>
+                                    </div>
+
+                                    <div class="contact-btn">
+                                        <button class="btn" type="submit">Send Message</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary Details -->
+                    <div class="col-lg-5">
+                        <div class="contact-info pt-0">
+                            <h3 class="contact-title">contact us</h3>
+                            <ul>
+                                <li>Address : @settings["Address"]</li>
+                                <li>@settings["Email"]</li>
+                                <li>@settings["Phone"]</li>
+                            </ul>
+                            <div class="working-time">
+                                <h4>Working Hours</h4>
+                                <p class="pb-0"><span>@settings["WorkingDays"]:</span>@settings["WorkingHours"]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+<!-- Main section end -->
