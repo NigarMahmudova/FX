@@ -85,6 +85,12 @@ namespace FamilyExperienceApp.Controllers
                 return View();
             }
 
+            //if (!member.EmailConfirmed)
+            //{
+            //    ModelState.AddModelError("", "Please, confirm your email!");
+            //    return View();
+            //}
+
             var result = await _signInManager.PasswordSignInAsync(member, memberVM.Password, memberVM.RememberMe, true);
 
             if (result.IsLockedOut)
@@ -173,7 +179,10 @@ namespace FamilyExperienceApp.Controllers
 
 
 
-
+        public IActionResult ForgotPassword()
+        {
+            return View();
+        }
 
 
         [HttpPost]
@@ -187,10 +196,14 @@ namespace FamilyExperienceApp.Controllers
 
             var url = Url.Action("verifytoken", "account", new { email = email, token = token }, Request.Scheme);
 
-            return Json(new
+            await _mailService.SendEmailAsync(new MailRequest()
             {
-                url = url
+                ToEmail = user.Email,
+                Subject = "Reset Password",
+                Body = $"<a href={url}>Click here</a>"
             });
+            TempData["Message"] = "Please, check your email";
+            return RedirectToAction("Login");
         }
 
         public async Task<IActionResult> VerifyToken(string email, string token)

@@ -24,10 +24,13 @@
                                     <label class="login-links-remember-label" asp-for="RememberMe">Remember me</label>
                                 </div>
                                 <div class="col-lg-6">
-                                    <a class="login-links-reset-password" asp-controller="account" asp-action="ForgotPassword">
+                                    <a class="login-links-reset-password" asp-action="forgotpassword">
                                         <span class="login-text">Forgot password?</span>
                                     </a>
                                 </div>
+                                <br/>
+                                <span class="text-danger">@TempData["Message"]</span>
+
                                 <div class="single-input-item">
                                     <div class="text-danger" asp-validation-summary="ModelOnly"></div>
                                 </div>

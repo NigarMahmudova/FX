@@ -33,6 +33,10 @@
 </head>
 
 <body>
+    @if (TempData["Success"] != null)
+    {
+            <input type="hidden" value="@TempData["Success"]" id="successMessage" />
+    }
     <!-- Header section start -->
     <header id="fx-page-header">
         <div id="fx-page-header-inner" class="">
@@ -363,10 +367,10 @@
                             <div id="footer-block" class="widget widget_block" data-area="fx-footer-top-area-column-2">
                                 <p class="fx-footer-list-title">SUPPORT</p>
                                 <ul class="fx-footer-list">
-                                    <li><a href="contact-us/index.html">Help &amp; Contact Us</a></li>
-                                    <li><a href="faq-page/index.html">Return &amp; Refunds</a></li>
-                                    <li><a href="shop/index.html">Online Stores</a></li>
-                                    <li><a href="privacy-policy/index.html">Privacy Policy</a></li>
+                                    <li><a href="#">Help &amp; Contact Us</a></li>
+                                    <li><a href="#">Return &amp; Refunds</a></li>
+                                    <li><a href="#">Online Stores</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -374,10 +378,10 @@
                             <div id="footer-block" class="widget widget_block" data-area="fx-footer-top-area-column-3">
                                 <p class="fx-footer-list-title">COMPANY</p>
                                 <ul class="fx-footer-list">
-                                    <li><a href="about-us/index.html">What we do</a></li>
-                                    <li><a href="gift-card/index.html">Gift Offers</a></li>
-                                    <li><a href="blog-standard/index.html">Latest Posts</a></li>
-                                    <li><a href="faq-page/index.html">F.A.Q</a></li>
+                                    <li><a href="#">What we do</a></li>
+                                    <li><a href="#">Gift Offers</a></li>
+                                    <li><a href="#">Latest Posts</a></li>
+                                    <li><a href="#">F.A.Q</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -400,20 +404,20 @@
                 <div class="container">
                     <div class="d-flex">
                         <div class="col-lg-9">
-                            <p class="fx-copyright-text">© 2023 <a href="https://qodeinteractive.com/" target="_blank"
+                            <p class="fx-copyright-text">© 2023 <a href="#" target="_blank"
                                     rel="nofollow noopener">Qode Interactive</a>, All Rights
                                 Reserved</p>
                         </div>
                         <div class="col-lg-3">
                             <div class="fx-social-icons-group">
                                 <span class="fx-icon-holder fx--textual">
-                                    <a itemprop="url" href="https://www.instagram.com/qodeinteractive/"
+                                    <a itemprop="url" href="#"
                                         target="http://_blank">IN</a> </span>
                                 <span class="fx-icon-holder fx--textual">
-                                    <a itemprop="url" href="https://www.youtube.com/QodeInteractiveVideos"
+                                    <a itemprop="url" href="#"
                                         target="http://_blank">YT </a> </span>
                                 <span class="fx-icon-holder fx--textual" data-hover-color="#a8a8a8">
-                                    <a itemprop="url" href="https://www.pinterest.com/qodeinteractive/"
+                                    <a itemprop="url" href="#"
                                         target="http://_blank">PI</a> </span>
                             </div>
                         </div>
@@ -430,12 +434,21 @@
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <script src="~/./assets/js/main.js"></script>
 
     <!-- <script src="./assets/js/basket.js"></script> -->
     @RenderSection("Scripts",required:false)
 </body>
+
+<script>
+    $(document).ready(function (e) {
+        if ($("#successMessage").length) {
+            toastr["success"]($("#successMessage").val())
+        }
+    })
+
+</script>
 
 </html>

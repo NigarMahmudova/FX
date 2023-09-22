@@ -59,7 +59,7 @@ namespace FamilyExperienceApp.Controllers
             _context.Contacts.Add(contact);
             _context.SaveChanges();
 
-            return RedirectToAction("index", "ContactUs");
+            return RedirectToAction("index", "Contact");
         }
     }
 }

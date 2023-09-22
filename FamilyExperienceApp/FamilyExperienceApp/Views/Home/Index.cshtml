@@ -249,14 +249,15 @@
                                             </div>
                                             <div class="email-element">
                                                 <div class="elementor-widget-container">
-                                                    <form action="#" method="post" class="wpcf7-form init demo">
+                                                    <form asp-action="EmailPost" asp-controller="home" method="post" class="wpcf7-form init demo">
                                                         <div class="fx-newsletter">
                                                             <label>
                                                                 <span class="fx-form-control" data-name="your-email">
                                                                     <input placeholder="E-mail address" value=""
-                                                                        type="email" name="your-email" />
+                                                                        type="email" name="email" />
                                                                 </span>
                                                             </label>
+                                                            <span></span>
                                                             <button class="fx-form-control fx-button" type="submit">
                                                                 <span class="fx-m-text">Send</span>
                                                                 <svg class="fx-svg--button-arrow"

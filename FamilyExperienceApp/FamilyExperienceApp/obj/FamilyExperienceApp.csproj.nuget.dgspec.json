@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User Widnows 10 Home\\Desktop\\Final\\FamilyExperienceApp\\FamilyExperienceApp\\FamilyExperienceApp.csproj": {}
+    "C:\\Users\\User Widnows 10 Home\\Desktop\\FX\\FamilyExperienceApp\\FamilyExperienceApp\\FamilyExperienceApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User Widnows 10 Home\\Desktop\\Final\\FamilyExperienceApp\\FamilyExperienceApp\\FamilyExperienceApp.csproj": {
+    "C:\\Users\\User Widnows 10 Home\\Desktop\\FX\\FamilyExperienceApp\\FamilyExperienceApp\\FamilyExperienceApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User Widnows 10 Home\\Desktop\\Final\\FamilyExperienceApp\\FamilyExperienceApp\\FamilyExperienceApp.csproj",
+        "projectUniqueName": "C:\\Users\\User Widnows 10 Home\\Desktop\\FX\\FamilyExperienceApp\\FamilyExperienceApp\\FamilyExperienceApp.csproj",
         "projectName": "FamilyExperienceApp",
-        "projectPath": "C:\\Users\\User Widnows 10 Home\\Desktop\\Final\\FamilyExperienceApp\\FamilyExperienceApp\\FamilyExperienceApp.csproj",
+        "projectPath": "C:\\Users\\User Widnows 10 Home\\Desktop\\FX\\FamilyExperienceApp\\FamilyExperienceApp\\FamilyExperienceApp.csproj",
         "packagesPath": "C:\\Users\\User Widnows 10 Home\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User Widnows 10 Home\\Desktop\\Final\\FamilyExperienceApp\\FamilyExperienceApp\\obj\\",
+        "outputPath": "C:\\Users\\User Widnows 10 Home\\Desktop\\FX\\FamilyExperienceApp\\FamilyExperienceApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

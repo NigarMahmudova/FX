@@ -18,7 +18,7 @@
                     <div class="fx-page-title" style="background-color: #e9e9e9; margin-bottom:94px">
                         <div class="fx-m-inner">
                             <div itemprop="breadcrumb" class="fx-breadcrumbs">
-                                <a itemprop="url" class="qodef-breadcrumbs-link" href="#">
+                                <a itemprop="url" class="qodef-breadcrumbs-link" asp-action="index" asp-controller="home">
                                     <span itemprop="title">Home</span>
                                 </a>
                                 <span class="fx-breadcrumbs-separator">|</span>
@@ -30,7 +30,7 @@
                         <p class="cart-empty fx-info d-flex align-items-center justify-content-center" style="font-weight: 400; color: #000;
                         font-size: 35px;line-height: 1.2em;margin: 0;">No products added to the wishlist.</p>
                         <p class="return-to-shop" style="margin: 20px 0 0;text-align: center;">
-                            <a class="button fx-backward" href="shop.html">
+                            <a class="button fx-backward" asp-action="index" asp-controller="shop">
                                 Return to shop
                             </a>
                         </p>

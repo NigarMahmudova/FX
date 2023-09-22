@@ -501,3 +501,21 @@
 .products {
     padding-bottom: 95px !important;
 }
+
+
+.wishlist-active::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background: url(../images/wishlist-added.svg) center center no-repeat !important;
+    background-size: cover;
+    width: 13px;
+    height: 15px;
+    margin-right: 13px;
+    opacity: 1 !important;
+    transition: opacity 0.25s ease-out;
+}

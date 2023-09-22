@@ -9,229 +9,237 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = FamilyExperienceApp
 build_property.RootNamespace = FamilyExperienceApp
-build_property.ProjectDir = C:\Users\User Widnows 10 Home\Desktop\Final\FamilyExperienceApp\FamilyExperienceApp\
+build_property.ProjectDir = C:\Users\User Widnows 10 Home\Desktop\FX\FamilyExperienceApp\FamilyExperienceApp\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\User Widnows 10 Home\Desktop\Final\FamilyExperienceApp\FamilyExperienceApp
+build_property.MSBuildProjectDirectory = C:\Users\User Widnows 10 Home\Desktop\FX\FamilyExperienceApp\FamilyExperienceApp
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Account/Login.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEFjY291bnRcTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Admin/Create.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Admin/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEFkbWluXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Admin/Index.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEFkbWluXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Banner/Create.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Banner/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJhbm5lclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Banner/Edit.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Banner/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJhbm5lclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Banner/Index.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Banner/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEJhbm5lclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Carousel/Create.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Carousel/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhcm91c2VsXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Carousel/Edit.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Carousel/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhcm91c2VsXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Carousel/Index.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Carousel/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhcm91c2VsXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Category/Create.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Category/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Category/Edit.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Category/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Category/Index.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENhdGVnb3J5XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Color/Create.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Color/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENvbG9yXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Color/Edit.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Color/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENvbG9yXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Color/Index.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Color/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXENvbG9yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Dashboard/Index.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Dashboard/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXERhc2hib2FyZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Gender/Create.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Gender/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEdlbmRlclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Gender/Edit.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Gender/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEdlbmRlclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Gender/Index.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Gender/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXEdlbmRlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Order/Detail.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Order/Detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXE9yZGVyXERldGFpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Order/Edit.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Order/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXE9yZGVyXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Order/Index.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Order/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXE9yZGVyXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Product/Create.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFByb2R1Y3RcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Product/Edit.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Product/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFByb2R1Y3RcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Product/Index.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Product/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFByb2R1Y3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Setting/Edit.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Setting/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNldHRpbmdcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Setting/Index.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Setting/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNldHRpbmdcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Shared/Error.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNoYXJlZFxFcnJvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Shared/_Layout.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNoYXJlZFxfTGF5b3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNoYXJlZFxfVmFsaWRhdGlvblNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Slider/Create.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Slider/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNsaWRlclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Slider/Edit.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Slider/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNsaWRlclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Slider/Index.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/Slider/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXFNsaWRlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/_ViewImports.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXF9WaWV3SW1wb3J0cy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/_ViewStart.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Areas/Manage/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTWFuYWdlXFZpZXdzXF9WaWV3U3RhcnQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Account/ForgotPassword.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Account/Login.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Account/Profile.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Account/Profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxQcm9maWxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Account/Register.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Basket/Index.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Basket/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFza2V0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Contact/Index.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Contact/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29udGFjdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Home/Index.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Order/Checkout.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Home/subscribe.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxzdWJzY3JpYmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Order/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Product/detail.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Product/detail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxkZXRhaWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Shared/Error.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Shared/_BasketModalPartial.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Shared/_BasketModalPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9CYXNrZXRNb2RhbFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Shared/_Layout.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Shared/_MemberUpdateFormPartial.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Shared/_MemberUpdateFormPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9NZW1iZXJVcGRhdGVGb3JtUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Shared/_OrderCreateFormPartial.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Shared/_OrderCreateFormPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9PcmRlckNyZWF0ZUZvcm1QYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Shared/_ProductReviewFormPartial.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Shared/_ProductReviewFormPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9kdWN0UmV2aWV3Rm9ybVBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Shared/_ProductTabContentPartial.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Shared/_ProductTabContentPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9kdWN0VGFiQ29udGVudFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Shop/Index.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Shop/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvcFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/Wishlist/Index.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/Wishlist/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaGxpc3RcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/_ViewImports.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/User Widnows 10 Home/Desktop/Final/FamilyExperienceApp/FamilyExperienceApp/Views/_ViewStart.cshtml]
+[C:/Users/User Widnows 10 Home/Desktop/FX/FamilyExperienceApp/FamilyExperienceApp/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

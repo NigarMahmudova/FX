@@ -31,6 +31,8 @@ namespace FamilyExperienceApp.Entities
 
         public Category Category { get; set; }
         public Color Color { get; set; }
+        [NotMapped]
+        public bool IsAdded { get; set; } = false;
 
         [NotMapped]
         [MaxFileLength(1073741824)]
