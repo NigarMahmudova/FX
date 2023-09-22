@@ -50,22 +50,33 @@ $(document).on("click", "#basketSubmitBtn", function (e) {
 })
 
 
-//$(document).on("click", "#wishlistSubmitBtn", function (e) {
-//    e.preventDefault();
-//    var ws_productId = document.getElementById("ws_productId").value;
-//    fetch("/Product/AddToWishlist?id=" + ws_productId, {
-//        method: "POST",
-//        headers: {
-//            "Content-Type": "application/json"
-//        },
-//    })
-//        .then(response => {
-//            alert("Elave edildi");
-//        })
-//        .catch(error => {
-//        });
+$(document).on("click", "#wishlistSubmitBtn", function (e) {
+    e.preventDefault();
+    var ws_productId = e.target.previousElementSibling.className;
+    var wishCount = document.getElementById("changeWishCount");
+    fetch("/Product/AddToWishlist?id=" + ws_productId, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+    })
+        .then(response => 
+            response.json()
+    ).then(data => {
+        wishCount.innerHTML = data.wishCount;
+        if (data.isAdded) {
+            e.target.classList.add("wishlist-active")
+        }
+        else {
+            e.target.classList.remove("wishlist-active")
 
-//})
+        }
+    })
+        .catch(error => {
+            alert("not okey")
+        });
+
+})
 
 
 toastr.options = {

@@ -109,10 +109,11 @@ namespace FamilyExperienceApp.Controllers
         {
 
             WishlistVM wishlistVM = new WishlistVM();
+            bool add = false;
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
             if (User.Identity.IsAuthenticated)
             {
-                string userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
                 var wishlistItems = _context.WishlistItems.Where(x => x.AppUserId == userId).ToList();
 
@@ -127,10 +128,11 @@ namespace FamilyExperienceApp.Controllers
                         Count = 1
                     };
                     _context.WishlistItems.Add(wishlistItem);
+                    add = true;
                 }
                 else
                 {
-                    wishlistItem.Count++;
+                    _context.WishlistItems.Remove(wishlistItem);
                 }
 
                 _context.SaveChanges();
@@ -150,8 +152,10 @@ namespace FamilyExperienceApp.Controllers
                     wishlistVM.Items.Add(item);
                 }
             }
-            
-            return RedirectToAction("index", "wishlist");
+
+            //return RedirectToAction("index", "wishlist");
+            var count = _context.WishlistItems.Where(x => x.AppUserId == userId).Count();
+            return Json(new { isAdded=add , wishCount=count });
         }
 
         

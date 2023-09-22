@@ -23,7 +23,8 @@
                         <div class="fx-add-to-wishlist">
 
                             <div class="fx-add-button">
-                                <a asp-action="addtowishlist" asp-controller="product" asp-route-id="@item.Id"
+                                <input type="hidden" id="wsProductId" class="@item.Id" />
+                                <a asp-action="addtowishlist" asp-controller="product" asp-route-id="@item.Id" id="wishlistSubmitBtn"
                                class="add_to_wishlist single_add_to_wishlist @(item.IsAdded?" wishlist-active":"")">
                                     <i class="fx-icon fa fa-heart-o"></i>
                                     <span>Add to wishlist</span>
