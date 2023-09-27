@@ -181,11 +181,20 @@ namespace FamilyExperienceApp.Areas.Manage.Controllers
             if (product.HoverPosterFile != null)
             {
                 ProductImage hoverPoster = existProduct.ProductImages.FirstOrDefault(x => x.PosterStatus == false);
-                removableImageNames.Add(hoverPoster.ImageName);
-                hoverPoster.ImageName = FileManager.Save(product.PosterFile, _env.WebRootPath, "manage/uploads/products");
+                if (hoverPoster!=null)
+                {
+                    removableImageNames.Add(hoverPoster.ImageName);
+                    _context.ProductImages.Remove(hoverPoster); 
+                }
+                var newImage = new ProductImage();
+                newImage.PosterStatus = false;
+                newImage.ProductId = existProduct.Id;
+                newImage.ImageName = FileManager.Save(product.HoverPosterFile, _env.WebRootPath, "manage/uploads/products");
+
+                _context.ProductImages.Add(newImage);
             }
 
-            var removableImages = existProduct.ProductImages.FindAll(x => x.PosterStatus == false && !product.ProductImageIds.Contains(x.Id));
+            var removableImages = existProduct.ProductImages.FindAll(x => x.PosterStatus == null && !product.ProductImageIds.Contains(x.Id));
             _context.ProductImages.RemoveRange(removableImages);
 
             removableImageNames.AddRange(removableImages.Select(x => x.ImageName).ToList());

@@ -32,7 +32,7 @@ namespace FamilyExperienceApp.Controllers
         {
 
             BasketVM basketVM = new BasketVM();
-            var dataCount = 0;
+            //var dataCount = 0;
 
             if (User.Identity.IsAuthenticated)
             {
@@ -60,7 +60,7 @@ namespace FamilyExperienceApp.Controllers
                 _context.SaveChanges();
 
                 
-                dataCount = _context.BasketItems.Count();
+                //dataCount = _context.BasketItems.Count();
             }
             else
             {
@@ -93,7 +93,7 @@ namespace FamilyExperienceApp.Controllers
                     cookieItem.Count++;
 
                 HttpContext.Response.Cookies.Append("basket", JsonConvert.SerializeObject(cookieItems));
-                dataCount = basketStr.Count();
+                //dataCount = basketStr.Count();
 
                 
             }

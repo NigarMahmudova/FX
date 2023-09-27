@@ -81,10 +81,10 @@
                                     <nav aria-label="...">
                 <ul class="pagination">
                     <li class="page-item @(Model.HasPrev?"":"disabled")">
-                        <a class="page-link" asp-action="index" asp-controller="slider" asp-route-page="1">First</a>
+                        <a class="page-link" asp-action="index" asp-controller="gender" asp-route-page="1">First</a>
                     </li>
                     <li class="page-item @(Model.HasPrev?"":"disabled")">
-                        <a class="page-link" asp-action="index" asp-controller="slider" asp-route-page="@(Model.PageIndex-1)">Previous</a>
+                                <a class="page-link" asp-action="index" asp-controller="gender" asp-route-page="@(Model.PageIndex-1)">Previous</a>
                     </li> 
 
                             @for (int i = 1; i <= Model.TotalPages; i++)
@@ -93,10 +93,10 @@
                             }
 
                     <li class="page-item  @(Model.HasNext?"":"disabled")">
-                        <a class="page-link" asp-action="index" asp-controller="slider" asp-route-page="@(Model.PageIndex+1)">Next</a>
+                                <a class="page-link" asp-action="index" asp-controller="gender" asp-route-page="@(Model.PageIndex+1)">Next</a>
                     </li>
                     <li class="page-item @(Model.HasNext?"":"disabled")">
-                        <a class="page-link" asp-action="index" asp-controller="slider" asp-route-page="@Model.TotalPages">Last</a>
+                                <a class="page-link" asp-action="index" asp-controller="gender" asp-route-page="@Model.TotalPages">Last</a>
                     </li>
                 </ul>
             </nav>

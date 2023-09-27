@@ -35,22 +35,22 @@ namespace FamilyExperienceApp.Controllers
 
                 ImageCarousels = _context.ImageCarousels.Take(15).ToList(),
 
-                WinterProducts = _context.Products
+                NewProducts = _context.Products
                                     .Include(x => x.ProductImages.Where(x => x.PosterStatus != null))
-                                    .Where(x => x.Season == true).Take(8).ToList(),
+                                    .Where(x => x.IsNew).Take(8).ToList(),
 
 
-                SummerProducts = _context.Products
+                DiscountedProducts = _context.Products
                                     .Include(x => x.ProductImages.Where(x => x.PosterStatus != null))
-                                    .Where(x => x.Season == false).Take(8).ToList(),
+                                    .Where(x => x.DiscountedPrice>0).Take(8).ToList(),
 
-                SpringAutumnProducts = _context.Products
-                                    .Include(x => x.ProductImages.Where(x => x.PosterStatus != null))
-                                    .Where(x => x.Season == null).Take(8).ToList(),
+                //SpringAutumnProducts = _context.Products
+                //                    .Include(x => x.ProductImages.Where(x => x.PosterStatus != null))
+                //                    .Where(x => x.Season == null).Take(8).ToList(),
 
-                Products = _context.Products
+                FavoriteProducts = _context.Products
                                     .Include(x => x.ProductImages.Where(x => x.PosterStatus != null))
-                                    .Take(8).ToList()
+                                    .Where(x=>x.IsFavorite).Take(8).ToList()
 
             };
 
@@ -58,28 +58,28 @@ namespace FamilyExperienceApp.Controllers
             {
                 var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
 
-				foreach (Product pro in model.WinterProducts)
+				foreach (Product pro in model.NewProducts)
                 {
                     if (_context.WishlistItems.Where(x=>x.AppUserId==userId && x.ProductId==pro.Id).Count() > 0)
                     {
                         pro.IsAdded= true;
                     }
                 }
-				foreach (Product pro in model.SummerProducts)
+				foreach (Product pro in model.DiscountedProducts)
 				{
 					if (_context.WishlistItems.Where(x => x.AppUserId == userId && x.ProductId == pro.Id).Count() > 0)
 					{
 						pro.IsAdded = true;
 					}
 				}
-				foreach (Product pro in model.SpringAutumnProducts)
-				{
-					if (_context.WishlistItems.Where(x => x.AppUserId == userId && x.ProductId == pro.Id).Count() > 0)
-					{
-						pro.IsAdded = true;
-					}
-				}
-				foreach (Product pro in model.Products)
+				//foreach (Product pro in model.SpringAutumnProducts)
+				//{
+				//	if (_context.WishlistItems.Where(x => x.AppUserId == userId && x.ProductId == pro.Id).Count() > 0)
+				//	{
+				//		pro.IsAdded = true;
+				//	}
+				//}
+				foreach (Product pro in model.FavoriteProducts)
 				{
 					if (_context.WishlistItems.Where(x => x.AppUserId == userId && x.ProductId == pro.Id).Count() > 0)
 					{
@@ -111,6 +111,7 @@ namespace FamilyExperienceApp.Controllers
                 Subject = "Subscribe",
                 Body = $"<a href={url}>Click here</a>"
             });
+            TempData["Success"] = "Please, check your email!";
             return RedirectToAction("index", "Home");
         }
         public IActionResult Subscribe(string email)

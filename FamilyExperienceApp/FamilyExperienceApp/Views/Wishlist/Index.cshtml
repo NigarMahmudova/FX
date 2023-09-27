@@ -89,7 +89,7 @@
                                                 </div>
                                             </td>
                                             <td class="product-thumbnail">
-                                                <a asp-action="detail" asp-controller="product" asp-route-id="@item.Id">
+                                                <a asp-action="detail" asp-controller="product" asp-route-id="@item.Product.Id">
                                                     <img width="600" height="734"
                                                  src="~/manage/uploads/products/@item.Product.ProductImages.FirstOrDefault(x=>x.PosterStatus==true)?.ImageName"
                                                  class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail"
@@ -97,7 +97,7 @@
                                                 </a>
                                             </td>
                                             <td class="product-name">
-                                                <a href="#">
+                                                <a asp-action="detail" asp-controller="product" asp-route-id="@item.Product.Id">
                                                     @item.Product.Name
                                                 </a>
                                             </td>
@@ -129,7 +129,7 @@
                                                 <span class="wishlist-in-stock">@(item.Product.StockStatus?"In Stock":"Out Stock")</span>
                                             </td>
                                             <td class="product-add-to-cart">
-                                                <a href="" class="wishlist-button">Add to cart</a>
+                                                <a asp-controller="product" asp-action="getdetail" asp-route-id="@item.Product.Id" class="wishlist-button modal-btn">Add to cart</a>
                                             </td>
                                         </tr>
                                     }

@@ -6,7 +6,7 @@
     <!-- Main section start -->
     <div id="fx-page-outer">
 
-        <div id="fx-page-inner">
+        <div id="fx-page-inner" style="padding-top: 90px">
 
             <main id="fx-page-content">
 
@@ -22,18 +22,18 @@
                             <section class="info-tabmenu">
                                 <div class="fx--tabs fx-tabs-wrapper">
                                     <ul class="tabs fx-detail-tabs" role="tablist">
-                                        <li class="description_tab @(ViewBag.Tab =="Orders"? "active" : "")" data-id="tab-title-description" role="tab">
+                                        <li class="description_tab @(ViewBag.Tab == "Orders" ? "active" : "")" data-id="tab-title-description" role="tab">
                                             <a href="#tab-description">
                                                 Orders </a>
                                         </li>
-                                        <li class="reviews_tab @(ViewBag.Tab =="Profile"? "active" : "")" data-id="tab-title-reviews" role="tab">
+                                        <li class="reviews_tab @(ViewBag.Tab =="Profile" ? "active" : "")" data-id="tab-title-reviews" role="tab">
                                             <a href="#tab-reviews">
                                                 Account Details </a>
                                         </li>
                                         <a asp-action="logout" asp-controller="account"> Logout </a>
                                         <!-- <span class="fx-product-tabs-line" style="width: 124.312px;left: 0px;"></span> -->
                                     </ul>
-                                    <div class="fx-Tabs-panel d-none @(ViewBag.Tab =="Orders"? "product-active" : "")" role="tabpanel" id="tab-title-description">
+                                <div class="fx-Tabs-panel  @(ViewBag.Tab == "Orders" ? "" : "d-none")" role="tabpanel" id="tab-title-description">
                                         <section class="description">
                                             <div class="myaccount-content">
                                                 <h3 id="reply-title" class="comment-reply-title">Orders</h3>
@@ -68,7 +68,7 @@
                                             </div>
                                         </section>
                                     </div>
-                                    <div class="fx-Tabs-panel @(ViewBag.Tab =="Profile"? "product-active" : "")" role="tabpanel" id="tab-title-reviews">
+                                    <div class="fx-Tabs-panel @(ViewBag.Tab == "Profile" ? "" : "d-none")" role="tabpanel" id="tab-title-reviews">
                                         @Html.Partial("_MemberUpdateFormPartial", Model.Member)
                                     </div>
                                 </div>

@@ -46,7 +46,7 @@
                     <input asp-for="ImageFile" class="form-control" onchange="readURL(this);">
                     <span class="text-danger" asp-validation-for="ImageFile"></span>
                     <input type="hidden" name="ImageName" value="@Model.ImageName" />
-                    <img id="sliderImage" src="~/manage/uploads/banners/@Model.ImageName" />                    
+                    <img id="sliderImage" width="150" src="~/manage/uploads/banners/@Model.ImageName" />
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

@@ -13,6 +13,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Family Experience</title>
+    <link rel="icon" sizes="16x16" type="image/x-icon" href="~/./assets/images/@settings["Logo"]">
     <link rel="stylesheet" href="~/./assets/css/bootstrap.css" />
     <link rel="stylesheet" type="text/css"
         href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
@@ -25,7 +26,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,300;0,6..12,400;0,6..12,500;1,6..12,200;1,6..12,300;1,6..12,400&display=swap"
         rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     
     @RenderSection("Css",required:false)
     <link rel="stylesheet" href="~/./assets/css/addition.css" />
@@ -155,18 +156,18 @@
                                 </svg>
                             </span>
                         </a>
-                        <ul class="dropdown-list fx-widget-dropdown-cart-content">
+                        <ul class="dropdown-list fx-widget-dropdown-cart-content" id="login-dropdown">
                           @if(User.Identity.IsAuthenticated && User.IsInRole("Member"))
                           {
                               <li><a asp-action="profile" asp-controller="account">@User.Identity.Name</a></li>
                               <li><a asp-action="logout" asp-controller="account">Logout</a></li>
-                              <li><a asp-action="profile" asp-controller="account">my account</a></li>
+                              <li><a asp-action="profile" asp-controller="account">My account</a></li>
                           }
                           else
                           {
                               <li><a asp-controller="account" asp-action="login">login</a></li>
                               <li><a asp-controller="account" asp-action="register">register</a></li>
-                              <li><a asp-controller="account" asp-action="profile">my account</a></li>                    
+                              <li><a asp-controller="account" asp-action="profile">My account</a></li>                    
                           }
                             
                         </ul>
@@ -428,27 +429,46 @@
     </footer>
     <!-- Footer section end -->
 
+    <div id="quick-view-modal" class="">
 
+    </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script type="text/javascript"
         src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+@*    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+*@
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <script>
+    $(document).ready(function (e) {
+        if ($("#successMessage").length) {
+            //Toastify.text($("#successMessage").val())
+                Toastify({
+                    text: $("#successMessage").val(),
+                    duration: 5000,
+                    destination: "https://github.com/apvarun/toastify-js",
+                    newWindow: true,
+                    close: true,
+                    gravity: "top", // `top` or `bottom`
+                    position: "right", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                        background: "#000",
+                    },
+                    onClick: function () { } // Callback after click
+                }).showToast();
+        }
+    })
+
+    </script>
 
     <script src="~/./assets/js/main.js"></script>
 
     <!-- <script src="./assets/js/basket.js"></script> -->
     @RenderSection("Scripts",required:false)
 </body>
-
-<script>
-    $(document).ready(function (e) {
-        if ($("#successMessage").length) {
-            toastr["success"]($("#successMessage").val())
-        }
-    })
-
-</script>
 
 </html>

@@ -51,10 +51,11 @@
                                                 <div class="fx-product-image-inner">
                                                     <a asp-controller="product" asp-action="getdetail" asp-route-id="@item.Id" class="button add_to_cart_button modal-btn">
                                                         Add to cart</a>
-                                                    <div class="fx-add-to-wishlist">
+                                                    <div class="fx-add-to-wishlist" style="z-index:10">
                                                         <div class="fx-add-button">
-                                                            <a href="#"
-                                                                class="fx-add-to-wishlist single_add_to_wishlist">
+                                                            <input type="hidden" id="wsProductId" class="@item.Id" />
+                                                            <a asp-action="addtowishlist" asp-controller="product" asp-route-id="@item.Id" id="wishlistSubmitBtn"
+                                                                class="fx-add-to-wishlist single_add_to_wishlist @(item.IsAdded?" wishlist-active":"")">
                                                                 <span>Add to wishlist</span>
                                                             </a>
                                                         </div>
@@ -64,9 +65,9 @@
                                                 </div>
                                                 <a asp-action="detail" asp-controller="product" asp-route-id="@item.Id" class="fx-LoopProduct-link"></a>
                                             </div>
-                                            <div class="fx-product-content">
+                                            <div class="fx-product-content" >
                                                 <h6 class="fx-product-title fx-loop-product__title">
-                                                    <a asp-action="detail" asp-controller="product" asp-route-id="@item.Id" class="fx-LoopProduct-link">
+                                                    <a asp-action="detail" asp-controller="product" asp-route-id="@item.Id" class="fx-LoopProduct-link" style="cursor:pointer">
                                                         @item.Name
                                                     </a>
                                                 </h6>
@@ -344,32 +345,32 @@
 
                             <div class="sidebar-single" data-area="shop-sidebar">
                                 <p class="fx-tag-cloud">
-                                    <a href="../product-tag/clothes/index.html"
+                                    <a href="#"
                                         class="tag-cloud-link tag-link-25 tag-link-position-1"
                                         style="font-size: 20.585858585859pt;"
                                         aria-label="clothes (30 items)">clothes</a>
-                                    <a href="../product-tag/collections/index.html"
+                                    <a href="#"
                                         class="tag-cloud-link tag-link-34 tag-link-position-2"
                                         style="font-size: 20.444444444444pt;"
                                         aria-label="collections (29 items)">collections</a>
-                                    <a href="../product-tag/design/index.html"
+                                    <a href="#"
                                         class="tag-cloud-link tag-link-20 tag-link-position-3"
                                         style="font-size: 15.212121212121pt;" aria-label="design (12 items)">design</a>
-                                    <a href="../product-tag/events/index.html"
+                                    <a href="#"
                                         class="tag-cloud-link tag-link-21 tag-link-position-4"
                                         style="font-size: 15.212121212121pt;" aria-label="events (12 items)">events</a>
-                                    <a href="../product-tag/fashion/index.html"
+                                    <a href="#"
                                         class="tag-cloud-link tag-link-30 tag-link-position-5"
                                         style="font-size: 19.313131313131pt;"
                                         aria-label="fashion (24 items)">fashion</a>
-                                    <a href="../product-tag/gift/index.html"
+                                    <a href="#"
                                         class="tag-cloud-link tag-link-57 tag-link-position-6" style="font-size: 8pt;"
                                         aria-label="gift (3 items)">gift</a>
-                                    <a href="../product-tag/inspiration/index.html"
+                                    <a href="#"
                                         class="tag-cloud-link tag-link-29 tag-link-position-7"
                                         style="font-size: 16.909090909091pt;"
                                         aria-label="inspiration (16 items)">inspiration</a>
-                                    <a href="../product-tag/new/index.html"
+                                    <a href="#"
                                         class="tag-cloud-link tag-link-24 tag-link-position-8" style="font-size: 22pt;"
                                         aria-label="new (38 items)">new</a>
                                 </p>
@@ -382,9 +383,9 @@
     </div>
     <!-- Main section end -->
 
-    <div id="quick-view-modal" class="">
+    @*<div id="quick-view-modal" class="">
 
-    </div>
+    </div>*@
 
     @section Scripts{
         <script src="~/./assets/js/plugins.js"></script>

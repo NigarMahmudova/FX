@@ -19,7 +19,9 @@ namespace FamilyExperienceApp.Controllers
         }
         public IActionResult Index()
         {
-            var wishlist = _context.WishlistItems.Include(x=>x.Product).ThenInclude(x=>x.ProductImages).ToList();
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+            var wishlist = _context.WishlistItems.Include(x=>x.Product).ThenInclude(x=>x.ProductImages).Where(x => x.AppUserId == userId).ToList();
             return View(wishlist);
         }
 

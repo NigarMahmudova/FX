@@ -78,14 +78,14 @@
                                                 </td>
 
                                                 <td class="product-thumbnail">
-                                                    <a href="#">
+                                                    <a asp-action="detail" asp-controller="product" asp-route-id="@item.Product.Id">
                                                         <img width="600" height="734" src="~/manage/uploads/products/@item.Product.ProductImages.FirstOrDefault(x=>x.PosterStatus==true)?.ImageName"
                                                      class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail" alt="a">
                                                     </a>
                                                 </td>
 
                                                 <td class="product-name" data-title="Product">
-                                                    <a href="#">@item.Product.Name</a>
+                                                    <a asp-action="detail" asp-controller="product" asp-route-id="@item.Product.Id">@item.Product.Name</a>
                                                 </td>
 
                                                 <td class="product-name" data-title="Product">

@@ -1,9 +1,12 @@
 ﻿using FamilyExperienceApp.DAL;
+using FamilyExperienceApp.Entities;
 using FamilyExperienceApp.Enums;
 using FamilyExperienceApp.ViewModels;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace FamilyExperienceApp.Controllers
 {
@@ -20,10 +23,10 @@ namespace FamilyExperienceApp.Controllers
             var query = _context.Products.Include(x => x.ProductImages.Where(x => x.PosterStatus == true)).Include(x => x.Color)
                 .Include(x => x.Category).AsQueryable();
 
-            if (search != null) query = query.Where(x => x.Name.Contains(search));
+            if (search != null) query = query.Where(x => x.Name.Contains(search) || x.Category.Name.Contains(search));
 
             ShopVM vm = new ShopVM();
-            vm.MinPrice = query.Min(x => x.DiscountedPrice>0?x.DiscountedPrice:x.SalePrice);
+            vm.MinPrice = query.Min(x => x.SalePrice);
             vm.MaxPrice = query.Max(x => x.SalePrice);
 
 
@@ -96,7 +99,7 @@ namespace FamilyExperienceApp.Controllers
 
             
 
-            vm.SortItems = new List<SelectListItem>
+                vm.SortItems = new List<SelectListItem>
             {
                 new SelectListItem("Sort by: (A-Z)","A_to_Z",sort=="A_to_Z"),
                 new SelectListItem("Sort by: (Z-A)","Z_to_A",sort=="Z_to_A"),
@@ -119,6 +122,20 @@ namespace FamilyExperienceApp.Controllers
                 new SelectListItem("Men","3",gender=="3"),
                 new SelectListItem("Kids","4",gender=="4"),
             };
+
+
+            if (User.Identity.IsAuthenticated)
+            {
+                var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+
+                foreach (var pro in vm.Products)
+                {
+                    if (_context.WishlistItems.Where(x => x.AppUserId == userId && x.ProductId == pro.Id).Count() > 0)
+                    {
+                        pro.IsAdded = true;
+                    }
+                }
+            }
 
             return View(vm);
         }

@@ -72,34 +72,34 @@
                                                 <div class="fx-category-filter">
                                                     <ul class="tabs fx-category-list">
                                                         <li class="product-active" data-id="1"><a class="product-border fx-category-filter-link" 
-                                                                href="#">All Products</a>
+                                                                href="#">Favorite Products</a>
                                                         </li>
                                                         <li data-id="2"><a class="fx-category-filter-link"
-                                                                href="#">Winter Collections</a>
+                                                                href="#">New Products</a>
                                                         </li>
                                                         <li data-id="3"><a class="fx-category-filter-link"
-                                                                href="#">Summer Collections</a>
+                                                                href="#">Discounted Products</a>
                                                         </li>
-                                                        <li data-id="4"><a class="fx-category-filter-link"
+                                                        @*<li data-id="4"><a class="fx-category-filter-link"
                                                                 href="#">Spring/Autumn Collections</a>
-                                                        </li>
+                                                        </li>*@
                                                     </ul>
                                                 </div>
                                             </div>
 
                                             <div class="fx-grid">
                                                 <div class="fx-Tabs-panel" id="1">
-                                                    @Html.Partial("_ProductTabContentPartial",Model.Products)
+                                                    @Html.Partial("_ProductTabContentPartial",Model.FavoriteProducts)
                                                 </div>
                                                 <div class="fx-Tabs-panel d-none" id="2">
-                                                    @Html.Partial("_ProductTabContentPartial",Model.WinterProducts)
+                                                    @Html.Partial("_ProductTabContentPartial",Model.NewProducts)
                                                 </div>
                                                 <div class="fx-Tabs-panel d-none" id="3">
-                                                    @Html.Partial("_ProductTabContentPartial",Model.SummerProducts)
+                                                    @Html.Partial("_ProductTabContentPartial",Model.DiscountedProducts)
                                                 </div>
-                                                <div class="fx-Tabs-panel d-none" id="4">
+                                                @*<div class="fx-Tabs-panel d-none" id="4">
                                                     @Html.Partial("_ProductTabContentPartial",Model.SpringAutumnProducts)
-                                                </div>
+                                                </div>*@
                                             </div>
                                         </div>
                                     </div>
@@ -419,9 +419,9 @@
     </div>
     <!-- Main section end -->
 
-<div id="quick-view-modal" class="">
+@*<div id="quick-view-modal" class="">
 
-</div>
+</div>*@
 
 @section Scripts{
     <script>

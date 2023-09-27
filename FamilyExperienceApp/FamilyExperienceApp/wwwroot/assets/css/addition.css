@@ -519,3 +519,45 @@
     opacity: 1 !important;
     transition: opacity 0.25s ease-out;
 }
+
+.shop-products .fx-product-image .fx-product-image-inner 
+{
+    padding:20px !important;
+}
+
+.fx-LoopProduct-link {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100% !important;
+}
+    .shop-products .fx-product-image .fx-product-image-inner .fx-add-to-wishlist a:hover::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    background: url(../images/wishlist-added.svg) center center no-repeat;
+    background-size: cover;
+    width: 13px;
+    height: 15px;
+    margin-right: 13px;
+    opacity: 1 !important;
+    transition: opacity 0.25s ease-out;
+}
+
+#login-dropdown > * {
+    padding: 0 23px !important;
+}
+
+.fx-e-inner-gender {
+    overflow: hidden;
+    background: black;
+}
+
+    .fx-e-inner-gender img {
+        opacity: 0.7;
+    }

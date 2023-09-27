@@ -69,30 +69,30 @@ $(document).on("click", "#wishlistSubmitBtn", function (e) {
         }
         else {
             e.target.classList.remove("wishlist-active")
-
         }
     })
         .catch(error => {
-            alert("not okey")
+            window.location.href = "https://localhost:7015/account/login"
         });
 
 })
 
 
-toastr.options = {
-    "closeButton": false,
-    "debug": false,
-    "newestOnTop": false,
-    "progressBar": false,
-    "positionClass": "toast-top-right",
-    "preventDuplicates": false,
-    "onclick": null,
-    "showDuration": "300",
-    "hideDuration": "1000",
-    "timeOut": "5000",
-    "extendedTimeOut": "1000",
-    "showEasing": "swing",
-    "hideEasing": "linear",
-    "showMethod": "fadeIn",
-    "hideMethod": "fadeOut"
-}
+//toastr.options = {
+//    "closeButton": false,
+//    "debug": false,
+//    "newestOnTop": false,
+//    "progressBar": false,
+//    "positionClass": "toast-top-right",
+//    "preventDuplicates": false,
+//    "onclick": null,
+//    "showDuration": "300",
+//    "hideDuration": "1000",
+//    "timeOut": "5000",
+//    "extendedTimeOut": "1000",
+//    "showEasing": "swing",
+//    "hideEasing": "linear",
+//    "showMethod": "fadeIn",
+//    "hideMethod": "fadeOut"
+//}
+
