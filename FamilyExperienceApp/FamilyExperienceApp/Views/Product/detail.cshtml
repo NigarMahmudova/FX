@@ -116,17 +116,24 @@
                                                         else
                                                         {
                                                             <div id="divStokYok">
-                                                                Item is out of stock.
+                                                                <strong>Item is out of stock.</strong>
                                                             </div>
                                                         }
                                                     </div>
-                                                    <div class="col-lg-6">
+                                                    @if (Model.Product.StockStatus)
+                                                    {
+                                                        <div class="col-lg-6">
                                                         <div class="buybutton" id="divSatinAl">
                                                             <button style="margin-top: 0" name="add-to-cart" id="basketSubmitBtn" class="js_add_to_cart button alt wp-element-button">
                                                                 Add to cart
                                                             </button>
                                                         </div>
-                                                    </div>
+                                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        
+                                                    }
                                                 </div>
                                                 
 
@@ -304,7 +311,7 @@
                                                 <div class="fx-product-image-inner">
                                                     <a asp-action="getdetail" asp-controller="product" asp-route-id="@item.Id"
                                                    class="button add_to_cart_button modal-btn">Add to cart</a>
-                                                    <div class="fx-add-to-wishlist">
+                                                    <div class="fx-add-to-wishlist" style="z-index:10">
 
                                                         <div class="fx-add-button">
                                                             <input type="hidden" id="wsProductId" class="@item.Id" />
@@ -316,7 +323,7 @@
                                                         </div>
 
                                                     </div>
-                                                    <a href="#" class="button fx-button"></a>
+                                                    <a style="z-index: 20" asp-controller="product" asp-action="getquickview" asp-route-id="@item.Id" class="button fx-button quick-view-modal-btn"></a>
                                                 </div>
                                                 <a asp-action="detail" asp-controller="product" class="fx-LoopProduct-link"></a>
                                             </div>

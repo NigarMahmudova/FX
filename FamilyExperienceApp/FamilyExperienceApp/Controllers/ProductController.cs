@@ -26,7 +26,14 @@ namespace FamilyExperienceApp.Controllers
             return PartialView("_BasketModalPartial", product);
         }
 
-        
+        public IActionResult GetQuickView(int id)
+        {
+            Product product = _context.Products.Include(x => x.ProductImages)
+                .Include(x => x.Color).FirstOrDefault(x => x.Id == id);
+            return PartialView("_QuickViewModalPartial", product);
+        }
+
+
         [HttpPost]
         public ActionResult AddToBasket(int id, int sizeId)
         {

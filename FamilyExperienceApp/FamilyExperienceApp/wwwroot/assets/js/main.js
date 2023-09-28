@@ -18,6 +18,26 @@
     //$("#quick-view-modal").modal("open")
 })
 
+$(document).on("click", ".quick-view-modal-btn", function (e) {
+    e.preventDefault();
+    let url = $(this).attr("href");
+    fetch(url).then(response => {
+        if (response.ok) {
+            return response.text()
+        }
+        else {
+            alert("xeta bas verdi")
+            return
+        }
+    })
+        .then(data => {
+            $("#quick-view-modal").html(data)
+        })
+    let modal = document.querySelector('#quick-view-modal');
+    modal.classList.add('open');
+    //$("#quick-view-modal").modal("open")
+})
+
 $(document).on("click", "#quick-view-close", function (e) {
     e.preventDefault();
     let modal = document.querySelector('#quick-view-modal');

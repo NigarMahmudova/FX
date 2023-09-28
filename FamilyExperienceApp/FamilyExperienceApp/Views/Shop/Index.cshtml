@@ -60,7 +60,7 @@
                                                             </a>
                                                         </div>
                                                     </div>
-                                                    <a href="#" class="button fx-button"></a>
+                                                    <a style="z-index:10" asp-controller="product" asp-action="getquickview" asp-route-id="@item.Id" class="button fx-button quick-view-modal-btn"></a>
 
                                                 </div>
                                                 <a asp-action="detail" asp-controller="product" asp-route-id="@item.Id" class="fx-LoopProduct-link"></a>
@@ -108,7 +108,7 @@
 
                                 </div>
                             </div>
-                            <nav class="fx-pagination">
+                            @*<nav class="fx-pagination">
                                 <span aria-current="page" class="page-numbers current">1</span>
                                 <a class="page-numbers" href="page/2/index.html">2</a>
                                 <a class="page-numbers" href="page/3/index.html">3</a>
@@ -124,7 +124,7 @@
                                             transform="translate(-232.725 -409.584)" fill="none" stroke="#000"
                                             stroke-width="1" />
                                     </svg></a>
-                            </nav>
+                            </nav>*@
                         </div>
 
                         <aside id="fx-page-sidebar" class="col-lg-3" role="complementary">

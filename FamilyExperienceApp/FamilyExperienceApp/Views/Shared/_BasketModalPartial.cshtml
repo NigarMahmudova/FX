@@ -25,24 +25,20 @@
                             <span class="modal-amount">
                                 @if (Model.DiscountedPrice > 0)
                                 {
-                                    <del aria-hidden="true">
+                                    <del aria-hidden="true" style="margin-right: 10px;">
                                         <span class="woocommerce-Price-amount amount">
                                             <span class="woocommerce-Price-currencySymbol">&#036;</span>@Model.SalePrice
                                         </span>
                                     </del>
-                                    <ins>
-                                        <span class="woocommerce-Price-amount amount">
-                                            <span class="woocommerce-Price-currencySymbol">&#036;</span>@Model.DiscountedPrice
-                                        </span>
-                                    </ins>
+                                    <span class="woocommerce-Price-amount amount">
+                                        <span class="woocommerce-Price-currencySymbol">&#036;</span>@Model.DiscountedPrice
+                                    </span>
                                 }
                                 else
                                 {
-                                    <ins>
-                                        <span class="woocommerce-Price-amount amount">
-                                            <span class="woocommerce-Price-currencySymbol">&#036;</span>@Model.SalePrice
-                                        </span>
-                                    </ins>
+                                    <span class="woocommerce-Price-amount amount">
+                                        <span class="woocommerce-Price-currencySymbol">&#036;</span>@Model.SalePrice
+                                    </span>
                                 }
                                 @*<bdi>
                                     <span class="modal-Price-currencySymbol">$</span>300.00
@@ -82,19 +78,23 @@
                                         </div>
                                     </div>
                                     <input type="hidden" id="productId" name="id" value="@Model.Id" />
-                                }
-                                else
-                                {
-                                    <div id="divStokYok">
-                                        Item is out of stock.
-                                    </div>
-                                }
 
-                                <div class="buybutton" id="divSatinAl">
+                                    <div class="buybutton" id="divSatinAl">
                                     <button name="add-to-cart" id="basketSubmitBtn" class="js_add_to_cart button alt wp-element-button">
                                         Add to cart
                                     </button>
-                                </div>
+                                    </div>
+                                }
+                                else
+                                {
+                                    <strong>
+                                        <div id="divStokYok">
+                                            Item is out of stock.
+                                        </div>
+                                    </strong>
+                                }
+
+                                
                             </div>
                             </form>
 

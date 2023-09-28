@@ -11,6 +11,9 @@
                     @if(item.IsNew){
                         <span class="fx-product-mark fx-new">New</span>
                     }
+                    @if(!item.StockStatus){
+                        <span class="fx-product-mark fx-new" style="color: #fff; background-color: #000;">Sold</span>
+                    }
                     <img width="410" height="556"
                      src="~/manage/uploads/products/@item.ProductImages.FirstOrDefault(x=>x.PosterStatus==true)?.ImageName"
                      class="attachment-full size-full" alt="a" />
@@ -32,7 +35,7 @@
                             </div>
 
                         </div>
-                        <a href="#" class="button fx-button">
+                        <a asp-controller="product" asp-action="getquickview" asp-route-id="@item.Id" class="button fx-button quick-view-modal-btn">
                             Quick
                             View
                         </a>
